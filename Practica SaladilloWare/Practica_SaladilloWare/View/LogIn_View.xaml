@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Practica_SaladilloWare.View.LogIn_View">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="lytStyle" 
+                   TargetType="StackLayout">
+                <Setter Property="BackgroundColor" 
+                        Value="DarkGray"/>
+            </Style>
+            <Style x:Key="lblStyle" 
+                   TargetType="Label">
+                <Setter Property="TextColor" 
+                        Value="White" />
+            </Style>
+            <Style x:Key="lblStatusErrorStyle" 
+                   TargetType="Label">
+                <Setter Property="Text" 
+                        Value="ERROR: Usuario y/o contraseña incorrectos." />
+                <Setter Property="TextColor" 
+                        Value="Red" />
+            </Style>
+            <Style x:Key="lblStatusOKStyle"
+                       TargetType="Label">
+                <Setter Property="Text"
+                        Value=""/>
+                <Setter Property="TextColor" 
+                        Value="Red" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" 
+                     HorizontalOptions="Center"
+                     Padding="25, 25"
+                     Style="{StaticResource lytStyle}">
+            <Label Text="Iniciar sesion" 
+                   VerticalOptions="CenterAndExpand"
+                   FontSize="Large"
+                   Style="{StaticResource lblStyle}"/>
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="FillAndExpand">
+                <Label Text="Nombre: "
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="FillAndExpand"
+                       Style="{StaticResource lblStyle}"/>
+                <Entry x:Name="txtNombre"
+                       WidthRequest="300"
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" 
+                         HorizontalOptions="FillAndExpand">
+                <Label Text="Nombre: "
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="FillAndExpand"
+                       Style="{StaticResource lblStyle}"/>
+                <Entry x:Name="txtContrasenia"
+                       WidthRequest="300"
+                       VerticalOptions="CenterAndExpand" 
+                       HorizontalOptions="EndAndExpand"
+                       IsPassword="True"/>
+            </StackLayout>
+            <StackLayout>
+                <Label HorizontalOptions="CenterAndExpand"
+                   Margin="30"
+                   Style="{StaticResource lblStatusOKStyle}">
+                    <Label.Triggers>
+                        <DataTrigger TargetType ="Entry"
+                                 Binding="{Binding Source={x:Reference txtContrasenia}, Path=Text}" 
+                                 Value="">
+                            <Setter Property="Text" 
+                                Value="ERROR: Debes rellenar los campos primero." />
+                        </DataTrigger>
+                        <DataTrigger TargetType ="Entry"
+                                 Binding="{Binding Source={x:Reference txtNombre}, Path=Text}" 
+                                 Value="">
+                            <Setter Property="Text" 
+                                Value="ERROR: Debes rellenar los campos primero." />
+                        </DataTrigger>
+                    </Label.Triggers>
+                </Label>
+                <Button x:Name="btnLogIn"
+                    Text="Entrar"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

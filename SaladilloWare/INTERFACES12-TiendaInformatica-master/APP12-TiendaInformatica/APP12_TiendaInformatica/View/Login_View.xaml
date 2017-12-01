@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP12_TiendaInformatica.View_Model.Login_View_Model">
+    <ContentPage.Content>
+        <StackLayout
+            BackgroundColor="LightSteelBlue">
+            <StackLayout
+                Margin="0,40,0,0"
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="Center">
+                <Label x:Name="lblNombre"
+                    Text="Nombre"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Entry x:Name="txtNombre"
+                    WidthRequest="300"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Label x:Name="lblContrasenia"
+                    Text="Contraseña"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                <Entry x:Name="txtContrasenia"
+                    WidthRequest="300"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <StackLayout>
+                <Label x:Name="lblStatus" 
+                       Text="ERROR: Usuario y/o contraseña incorrectos."
+                       HorizontalOptions="CenterAndExpand"/>
+                <Button x:Name="btnLogIn"
+                    Text="LogIn"
+                    TextColor="White"
+                    BackgroundColor="Teal"
+                    VerticalOptions="Center" 
+                    BorderColor="Teal"
+                    HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
