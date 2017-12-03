@@ -4,88 +4,91 @@
              x:Class="Practica_SaladilloWare.View.LogIn_View">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="lytStyle" 
+            <Style x:Key="lytStyle"
                    TargetType="StackLayout">
-                <Setter Property="BackgroundColor" 
-                        Value="DarkGray"/>
+                <Setter Property="BackgroundColor"
+                        Value="#505050"/>
             </Style>
-            <Style x:Key="lblStyle" 
+            <Style x:Key="lblStyle"
                    TargetType="Label">
-                <Setter Property="TextColor" 
-                        Value="White" />
+                <Setter Property="TextColor"
+                        Value="White"/>
             </Style>
-            <Style x:Key="lblStatusErrorStyle" 
-                   TargetType="Label">
-                <Setter Property="Text" 
-                        Value="ERROR: Usuario y/o contraseña incorrectos." />
-                <Setter Property="TextColor" 
-                        Value="Red" />
+            <Style x:Key="btnStyle"
+                   TargetType="Button">
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <Setter Property="BorderColor"
+                        Value="#999999"/>
             </Style>
             <Style x:Key="lblStatusOKStyle"
                        TargetType="Label">
                 <Setter Property="Text"
                         Value=""/>
-                <Setter Property="TextColor" 
-                        Value="Red" />
+                <Setter Property="TextColor"
+                        Value="Red"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout VerticalOptions="Center" 
+        <StackLayout VerticalOptions="Center"
                      HorizontalOptions="Center"
                      Padding="25, 25"
                      Style="{StaticResource lytStyle}">
-            <Label Text="Iniciar sesion" 
+            <Label x:Name="lblTitulo"
+                   Text="Iniciar sesion"
                    VerticalOptions="CenterAndExpand"
                    FontSize="Large"
                    Style="{StaticResource lblStyle}"/>
-            <StackLayout Orientation="Horizontal" 
+            <StackLayout Orientation="Horizontal"
                          HorizontalOptions="FillAndExpand">
-                <Label Text="Nombre: "
-                       VerticalOptions="CenterAndExpand" 
+                <Label x:Name="lblNombre"
+                       Text="Nombre: "
+                       VerticalOptions="CenterAndExpand"
                        HorizontalOptions="FillAndExpand"
                        Style="{StaticResource lblStyle}"/>
                 <Entry x:Name="txtNombre"
                        WidthRequest="300"
-                       VerticalOptions="CenterAndExpand" 
+                       VerticalOptions="CenterAndExpand"
                        HorizontalOptions="EndAndExpand"/>
             </StackLayout>
-            <StackLayout Orientation="Horizontal" 
+            <StackLayout Orientation="Horizontal"
                          HorizontalOptions="FillAndExpand">
-                <Label Text="Nombre: "
-                       VerticalOptions="CenterAndExpand" 
+                <Label x:Name="lblContrasenia"
+                       Text="Contraseña: "
+                       VerticalOptions="CenterAndExpand"
                        HorizontalOptions="FillAndExpand"
                        Style="{StaticResource lblStyle}"/>
                 <Entry x:Name="txtContrasenia"
                        WidthRequest="300"
-                       VerticalOptions="CenterAndExpand" 
+                       VerticalOptions="CenterAndExpand"
                        HorizontalOptions="EndAndExpand"
                        IsPassword="True"/>
             </StackLayout>
-            <StackLayout>
-                <Label HorizontalOptions="CenterAndExpand"
+            <Label x:Name="lblStatus"
+                   HorizontalOptions="CenterAndExpand"
                    Margin="30"
                    Style="{StaticResource lblStatusOKStyle}">
-                    <Label.Triggers>
-                        <DataTrigger TargetType ="Entry"
-                                 Binding="{Binding Source={x:Reference txtContrasenia}, Path=Text}" 
+                <Label.Triggers>
+                    <DataTrigger TargetType ="Label"
+                                 Binding="{Binding Source={x:Reference txtContrasenia}, Path=Text}"
                                  Value="">
-                            <Setter Property="Text" 
-                                Value="ERROR: Debes rellenar los campos primero." />
-                        </DataTrigger>
-                        <DataTrigger TargetType ="Entry"
-                                 Binding="{Binding Source={x:Reference txtNombre}, Path=Text}" 
+                        <Setter Property="Text"
+                                Value="ERROR: Debes rellenar los campos primero."/>
+                    </DataTrigger>
+                    <DataTrigger TargetType ="Label"
+                                 Binding="{Binding Source={x:Reference txtNombre}, Path=Text}"
                                  Value="">
-                            <Setter Property="Text" 
-                                Value="ERROR: Debes rellenar los campos primero." />
-                        </DataTrigger>
-                    </Label.Triggers>
-                </Label>
-                <Button x:Name="btnLogIn"
-                    Text="Entrar"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="FillAndExpand"/>
-            </StackLayout>
+                        <Setter Property="Text"
+                                Value="ERROR: Debes rellenar los campos primero."/>
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+            <Button x:Name="btnLogIn"
+                    Text="Iniciar Sesión"
+                    VerticalOptions="Center"
+                    HorizontalOptions="FillAndExpand"
+                    Style="{StaticResource btnStyle}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

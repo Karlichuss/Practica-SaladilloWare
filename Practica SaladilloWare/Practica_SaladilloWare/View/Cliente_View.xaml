@@ -2,13 +2,90 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Practica_SaladilloWare.View.Cliente_View">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="lytStyle"
+                   TargetType="StackLayout">
+                <Setter Property="BackgroundColor"
+                        Value="#505050"/>
+            </Style>
+            <Style x:Key="lblStyle"
+                   TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="White"/>
+            </Style>
+            <Style x:Key="btnStyle"
+                   TargetType="Button">
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <Setter Property="BorderColor"
+                        Value="#999999"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Cliente_View"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Style="{StaticResource lytStyle}"
+                     Padding="25, 25">
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center">
+                <StackLayout HorizontalOptions="StartAndExpand">
+                    <Label x:Name="lblPlacaBase"
+                           Text="Placa Base: "
+                           Style="{StaticResource lblStyle}"
+                           Margin="10,0,0,0"/>
+                    <Picker x:Name="picPlacaBase"
+                            WidthRequest="300"/>
+                    <Label x:Name="lblProcesador"
+                           Text="Procesador: "
+                           Style="{StaticResource lblStyle}"
+                           Margin="10,0,0,0"/>
+                    <Picker x:Name="picProcesador"
+                            WidthRequest="300"/>
+                    <Label x:Name="lblChasis"
+                           Text="Chasis: "
+                           Style="{StaticResource lblStyle}"
+                           Margin="10,0,0,0"/>
+                    <Picker x:Name="picChasis"
+                            WidthRequest="300"/>
+                    <Label x:Name="lblMemoria"
+                           Text="Memoria RAM: "
+                           Style="{StaticResource lblStyle}"
+                           Margin="10,0,0,0"/>
+                    <Picker x:Name="picMemoria"
+                            WidthRequest="300"/>
+                    <Label x:Name="lblTarjetaGrafica"
+                           Text="Tarjeta Grafica: "
+                           Style="{StaticResource lblStyle}"
+                           Margin="10,0,0,0"/>
+                    <Picker x:Name="picTarjetaGrafica"
+                            WidthRequest="300"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand">
+                    <Button x:Name="btnAceptar"
+                            Text="Aceptar"
+                            WidthRequest="300"
+                            HorizontalOptions="Center"
+                            Style="{StaticResource btnStyle}"/>
+                    <Label x:Name="lblResumen"
+                           Text="Resumen: "
+                           Style="{StaticResource lblStyle}"
+                           Margin="10,0,0,0"/>
+                    <ListView x:Name="lstResumen"
+                              WidthRequest="300"
+                              HorizontalOptions="Center"/>
+                    <Button x:Name="btnConfirmar"
+                            Text="Confirmar"
+                            WidthRequest="300"
+                            HorizontalOptions="Center"
+                            Style="{StaticResource btnStyle}"/>
+                </StackLayout>
+            </StackLayout>
             <Button x:Name="btnLogOut"
-                    Text="Cerrar Sesión"/>
+                    Text="Cerrar Sesion"
+                    Style="{StaticResource btnStyle}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

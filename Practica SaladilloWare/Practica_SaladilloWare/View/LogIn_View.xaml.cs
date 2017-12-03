@@ -1,9 +1,4 @@
 ﻿using Practica_SaladilloWare.View_Model;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -42,7 +37,7 @@ namespace Practica_SaladilloWare.View
             }
             else
             {
-                txtNombre.Text = "";
+                DisplayAlert("ERROR", "Usuario y/o contraseña incorrectos.", "OK");
                 txtContrasenia.Text = "";
             }
         }
