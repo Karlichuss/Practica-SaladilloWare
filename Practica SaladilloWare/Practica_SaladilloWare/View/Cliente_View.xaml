@@ -28,6 +28,9 @@
                      VerticalOptions="Center"
                      Style="{StaticResource lytStyle}"
                      Padding="25, 25">
+            <Label x:Name="lblBienvenida"
+                   Style="{StaticResource lblStyle}"
+                   FontSize="Large"/>
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="Center"
                          VerticalOptions="Center">
@@ -81,6 +84,11 @@
                             WidthRequest="300"
                             HorizontalOptions="Center"
                             Style="{StaticResource btnStyle}"/>
+                    <Button x:Name="btnCancelar"
+                            Text="Cancelar"
+                            Style="{StaticResource btnStyle}"
+                            WidthRequest="300"
+                            HorizontalOptions="Center"/>
                 </StackLayout>
             </StackLayout>
             <Button x:Name="btnLogOut"

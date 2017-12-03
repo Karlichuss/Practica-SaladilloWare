@@ -1,4 +1,5 @@
 ﻿
+using Practica_SaladilloWare.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,7 +8,7 @@ namespace Practica_SaladilloWare.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Vendor_View : ContentPage
 	{
-		public Vendor_View ()
+		public Vendor_View (Usuario usuario)
 		{
 			InitializeComponent ();
 

@@ -1,5 +1,6 @@
-﻿using Practica_SaladilloWare.View_Model;
-
+﻿using Practica_SaladilloWare.Model;
+using Practica_SaladilloWare.View_Model;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,6 +10,7 @@ namespace Practica_SaladilloWare.View
     public partial class LogIn_View : ContentPage
     {
         LogIn_View_Model ViewModel = new LogIn_View_Model();
+        Usuario usuario;
 
         public LogIn_View()
         {
@@ -18,26 +20,28 @@ namespace Practica_SaladilloWare.View
             {
                 await ViewModel.IniciarSesionAsync(txtNombre.Text, txtContrasenia.Text);
 
-                Entrar();
+                await EntrarAsync();
             };
         }
 
-        private void Entrar()
+        private async Task EntrarAsync()
         {
             if (!ViewModel.Error)
             {
+                usuario = await ViewModel.GetUsuario(txtNombre.Text);
+
                 if (ViewModel.EsCliente)
                 {
-                    Navigation.PushModalAsync(new Cliente_View());
+                    await Navigation.PushModalAsync(new Cliente_View(usuario));
                 }
                 else
                 {
-                    Navigation.PushModalAsync(new Vendor_View());
+                    await Navigation.PushModalAsync(new Vendor_View(usuario));
                 }
             }
             else
             {
-                DisplayAlert("ERROR", "Usuario y/o contraseña incorrectos.", "OK");
+                await DisplayAlert("ERROR", "Usuario y/o contraseña incorrectos.", "OK");
                 txtContrasenia.Text = "";
             }
         }

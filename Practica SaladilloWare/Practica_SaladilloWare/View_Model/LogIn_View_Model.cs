@@ -1,6 +1,7 @@
 ﻿using Practica_SaladilloWare.Assets;
 using System;
 using System.Threading.Tasks;
+using Practica_SaladilloWare.Model;
 
 namespace Practica_SaladilloWare.View_Model
 {
@@ -28,6 +29,11 @@ namespace Practica_SaladilloWare.View_Model
             {
                 Error = true;
             }
+        }
+
+        public async Task<Usuario> GetUsuario(String nombre)
+        {
+            return await Usuario_Repository.ComprobarNombre(nombre);
         }
     }
 }
