@@ -22,6 +22,22 @@ namespace Practica_SaladilloWare.Assets
             conn.CreateTableAsync<Procesador>().Wait();
         }
 
+        public static async Task<List<String>> GetNombres()
+        {
+            List<Procesador> Procesadores;
+            List<String> Nombres = new List<String>();
+
+            ObservableCollection<Procesador> procesadores = new ObservableCollection<Procesador>(await App.Procesador_Repository.GetAllProcesadoresAsync());
+            Procesadores = procesadores.ToList();
+
+            foreach (Procesador p in Procesadores)
+            {
+                Nombres.Add(p.Nombre);
+            }
+
+            return Nombres.ToList();
+        }
+
         public async Task<List<Procesador>> GetAllProcesadoresAsync()
         {
             //Creamos la lista de personas

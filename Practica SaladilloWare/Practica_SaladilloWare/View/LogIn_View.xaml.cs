@@ -18,14 +18,14 @@ namespace Practica_SaladilloWare.View
 
             btnLogIn.Clicked += async (sender, args) =>
             {
-                await ViewModel.IniciarSesionAsync(txtNombre.Text, txtContrasenia.Text);
-
                 await EntrarAsync();
             };
         }
 
         private async Task EntrarAsync()
         {
+            await ViewModel.IniciarSesionAsync(txtNombre.Text, txtContrasenia.Text);
+
             if (!ViewModel.Error)
             {
                 usuario = await ViewModel.GetUsuario(txtNombre.Text);

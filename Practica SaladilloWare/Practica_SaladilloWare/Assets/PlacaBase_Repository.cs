@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace Practica_SaladilloWare.Assets
 {
@@ -53,6 +54,22 @@ namespace Practica_SaladilloWare.Assets
             placa = placas.SingleOrDefault(p => p.Id == producto.Id);
 
             return placa;
+        }
+
+        public static async Task<List<String>> GetNombres()
+        {
+            List<PlacaBase> PlacasBase;
+            List<String> Nombres = new List<String>();
+
+            ObservableCollection<PlacaBase> placas = new ObservableCollection<PlacaBase>(await App.PlacaBase_Repository.GetAllPlacasBaseAsync());
+            PlacasBase = placas.ToList();
+
+            foreach (PlacaBase p in PlacasBase)
+            {
+                Nombres.Add(p.Nombre);
+            }
+
+            return Nombres.ToList();
         }
     }
 }

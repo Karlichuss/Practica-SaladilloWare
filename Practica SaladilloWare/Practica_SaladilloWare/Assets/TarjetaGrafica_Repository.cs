@@ -54,5 +54,21 @@ namespace Practica_SaladilloWare.Assets
 
             return tarjeta;
         }
+
+        public static async Task<List<String>> GetNombres()
+        {
+            List<TarjetaGrafica> TarjetasGraficas;
+            List<String> Nombres = new List<String>();
+
+            ObservableCollection<TarjetaGrafica> tarjetasGraficas = new ObservableCollection<TarjetaGrafica>(await App.TarjetaGrafica_Repository.GetAllTarjetassync());
+            TarjetasGraficas = tarjetasGraficas.ToList();
+
+            foreach (TarjetaGrafica p in TarjetasGraficas)
+            {
+                Nombres.Add(p.Nombre);
+            }
+
+            return Nombres.ToList();
+        }
     }
 }

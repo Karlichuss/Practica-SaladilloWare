@@ -1,7 +1,7 @@
-﻿
-using System;
-using Practica_SaladilloWare.Model;
+﻿using Practica_SaladilloWare.Model;
 using Practica_SaladilloWare.View_Model;
+using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,21 +18,21 @@ namespace Practica_SaladilloWare.View
 
             ViewModel = new Cliente_View_Model(usuario);
 
-            InitViews();
+            InitViewsAsync();
 
             btnAceptar.Clicked += (sender, args) =>
             {
-                RellenarLista();
+                // RellenarLista();
             };
 
             btnConfirmar.Clicked += (sender, args) =>
             {
-                RealizarPedido();
+                // RealizarPedido();
             };
 
             btnCancelar.Clicked += (sender, args) =>
             {
-                LimpiarFormulario();
+               // LimpiarFormulario();
             };
 
             btnLogOut.Clicked += async (sender, args) =>
@@ -41,7 +41,7 @@ namespace Practica_SaladilloWare.View
             };
         }
 
-        private void InitViews()
+        private void InitViewsAsync()
         {
             DisplayAlert("¿Como realizar un pedido?",
                             "1. Seleccionas un componente de cada tipo para tu PC.\n" +
@@ -52,17 +52,34 @@ namespace Practica_SaladilloWare.View
 
             lblBienvenida.Text = "Bienvenido, " + ViewModel.usuario.Nombre;
 
-            //RellenarPickers();
+            RellenarPickersAsync();
         }
 
-        private void RellenarPickers()
+        private async Task RellenarPickersAsync()
         {
-            throw new NotImplementedException();
+            // Rellenas cada Picker con los productos que hay en la base de datos.
+            picPlacaBase.ItemsSource = await ViewModel.GetPlacasBase();
+            picProcesador.ItemsSource = await ViewModel.GetProcesadores();
+            picChasis.ItemsSource = await ViewModel.GetChasis();
+            picMemoria.ItemsSource = await ViewModel.GetRAMs();
+            picTarjetaGrafica.ItemsSource = await ViewModel.GetTarjetasGraficas();
+
         }
 
         private void LimpiarFormulario()
         {
             // Vuelves a vaciar el contenido de todos los Picker y la lista de Productos.
+            picPlacaBase.SelectedItem = "";
+            picProcesador.SelectedItem = "";
+            picChasis.SelectedItem = "";
+            picMemoria.SelectedItem = "";
+            picTarjetaGrafica.SelectedItem = "";
+            lstResumen.ItemsSource = "";
+        }
+
+        private void RellenarLista()
+        {
+            // Rellenas la lista de Productos con la seleccion de todos los Picker.
             throw new NotImplementedException();
         }
 
@@ -72,10 +89,6 @@ namespace Practica_SaladilloWare.View
             throw new NotImplementedException();
         }
 
-        private void RellenarLista()
-        {
-            // Rellenas la lista de Productos con la seleccion de todos los Picker.
-            throw new NotImplementedException();
-        }
+       
     }
 }

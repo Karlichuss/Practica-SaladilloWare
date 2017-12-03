@@ -54,5 +54,21 @@ namespace Practica_SaladilloWare.Assets
 
             return memoria;
         }
+
+        public static async Task<List<String>> GetNombres()
+        {
+            List<RAM> Memorias;
+            List<String> Nombres = new List<String>();
+
+            ObservableCollection<RAM> memorias = new ObservableCollection<RAM>(await App.Ram_Repository.GetAllRAMAsync());
+            Memorias = memorias.ToList();
+
+            foreach (RAM p in Memorias)
+            {
+                Nombres.Add(p.Nombre);
+            }
+
+            return Nombres.ToList();
+        }
     }
 }

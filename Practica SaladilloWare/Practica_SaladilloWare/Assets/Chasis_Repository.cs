@@ -41,6 +41,22 @@ namespace Practica_SaladilloWare.Assets
             return lst;
         }
 
+        public static async Task<List<String>> GetNombres()
+        {
+            List<Chasis> Chasis;
+            List<String> Nombres = new List<String>();
+
+            ObservableCollection<Chasis> chasis = new ObservableCollection<Chasis>(await App.Chasis_Repository.GetAllChasisAsync());
+            Chasis = chasis.ToList();
+
+            foreach (Chasis c in Chasis)
+            {
+                Nombres.Add(c.Nombre);
+            }
+
+            return Nombres.ToList();
+        }
+
         /// <summary>
         /// Comprueba si existe el chasis recibida por parametro
         /// </summary>
