@@ -1,6 +1,7 @@
 ﻿using Practica_SaladilloWare.Model;
 using Practica_SaladilloWare.View_Model;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -20,19 +21,21 @@ namespace Practica_SaladilloWare.View
 
             InitViewsAsync();
 
-            btnAceptar.Clicked += (sender, args) =>
+            btnAceptar.Clicked += async (sender, args) =>
             {
-                // RellenarLista();
+                lstResumen.ItemsSource = await Cliente_View_Model.RellenarLista(picPlacaBase.Items[picPlacaBase.SelectedIndex], picProcesador.Items[picProcesador.SelectedIndex], picChasis.Items[picChasis.SelectedIndex], picMemoria.Items[picMemoria.SelectedIndex], picTarjetaGrafica.Items[picTarjetaGrafica.SelectedIndex]);
+
+                lblTotal.Text = await Cliente_View_Model.ObtenerTotal(picPlacaBase.Items[picPlacaBase.SelectedIndex], picProcesador.Items[picProcesador.SelectedIndex], picChasis.Items[picChasis.SelectedIndex], picMemoria.Items[picMemoria.SelectedIndex], picTarjetaGrafica.Items[picTarjetaGrafica.SelectedIndex]);
             };
 
             btnConfirmar.Clicked += (sender, args) =>
             {
-                // RealizarPedido();
+                RealizarPedido();
             };
 
             btnCancelar.Clicked += (sender, args) =>
             {
-               // LimpiarFormulario();
+                LimpiarFormulario();
             };
 
             btnLogOut.Clicked += async (sender, args) =>
@@ -52,10 +55,10 @@ namespace Practica_SaladilloWare.View
 
             lblBienvenida.Text = "Bienvenido, " + ViewModel.usuario.Nombre;
 
-            RellenarPickersAsync();
+            RellenarPickers();
         }
 
-        private async Task RellenarPickersAsync()
+        private async Task RellenarPickers()
         {
             // Rellenas cada Picker con los productos que hay en la base de datos.
             picPlacaBase.ItemsSource = await ViewModel.GetPlacasBase();
@@ -63,32 +66,30 @@ namespace Practica_SaladilloWare.View
             picChasis.ItemsSource = await ViewModel.GetChasis();
             picMemoria.ItemsSource = await ViewModel.GetRAMs();
             picTarjetaGrafica.ItemsSource = await ViewModel.GetTarjetasGraficas();
-
         }
 
         private void LimpiarFormulario()
         {
             // Vuelves a vaciar el contenido de todos los Picker y la lista de Productos.
-            picPlacaBase.SelectedItem = "";
-            picProcesador.SelectedItem = "";
-            picChasis.SelectedItem = "";
-            picMemoria.SelectedItem = "";
-            picTarjetaGrafica.SelectedItem = "";
-            lstResumen.ItemsSource = "";
-        }
+            picPlacaBase.SelectedItem = -1;
+            picProcesador.SelectedItem = -1;
+            picChasis.SelectedItem = -1;
+            picMemoria.SelectedItem = -1;
+            picTarjetaGrafica.SelectedItem = -1;
 
-        private void RellenarLista()
-        {
-            // Rellenas la lista de Productos con la seleccion de todos los Picker.
-            throw new NotImplementedException();
+            lstResumen.ItemsSource = new List<String>();
         }
 
         private void RealizarPedido()
         {
-            // Introduces el pedido en la base de datos.
-            throw new NotImplementedException();
-        }
+            // Introduces en la base de datos un nuevo pedido con los IDs de los productos seleccionados y el ID del usuario. Luego limpiamos el formulario.
+            ViewModel.GenerarPedido(picPlacaBase.Items[picPlacaBase.SelectedIndex], picProcesador.Items[picProcesador.SelectedIndex], picChasis.Items[picChasis.SelectedIndex], picMemoria.Items[picMemoria.SelectedIndex], picTarjetaGrafica.Items[picTarjetaGrafica.SelectedIndex]);
 
-       
+            DisplayAlert("¡Gracias por su confianza!",
+                            "Pedido realizado con éxito.",
+                            "Limpiar formulario y realizar otro pedido");
+
+            LimpiarFormulario();
+        }
     }
 }

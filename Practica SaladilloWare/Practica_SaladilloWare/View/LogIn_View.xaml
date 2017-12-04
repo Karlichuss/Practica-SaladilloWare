@@ -26,7 +26,7 @@
                 <Setter Property="Text"
                         Value=""/>
                 <Setter Property="TextColor"
-                        Value="Red"/>
+                        Value="#990000"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -36,35 +36,21 @@
                      Padding="25, 25"
                      Style="{StaticResource lytStyle}">
             <Label x:Name="lblTitulo"
-                   Text="Iniciar sesion"
+                   Text="Iniciar sesión"
                    VerticalOptions="CenterAndExpand"
                    FontSize="Large"
                    Style="{StaticResource lblStyle}"/>
-            <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="FillAndExpand">
-                <Label x:Name="lblNombre"
+            <Label x:Name="lblNombre"
                        Text="Nombre: "
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="FillAndExpand"
                        Style="{StaticResource lblStyle}"/>
-                <Entry x:Name="txtNombre"
-                       WidthRequest="300"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="EndAndExpand"/>
-            </StackLayout>
-            <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="FillAndExpand">
-                <Label x:Name="lblContrasenia"
+            <Entry x:Name="txtNombre"
+                       WidthRequest="400"/>
+            <Label x:Name="lblContrasenia"
                        Text="Contraseña: "
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="FillAndExpand"
                        Style="{StaticResource lblStyle}"/>
-                <Entry x:Name="txtContrasenia"
-                       WidthRequest="300"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="EndAndExpand"
+            <Entry x:Name="txtContrasenia"
+                       WidthRequest="400"
                        IsPassword="True"/>
-            </StackLayout>
             <Label x:Name="lblStatus"
                    HorizontalOptions="CenterAndExpand"
                    Margin="30"
@@ -85,7 +71,7 @@
                 </Label.Triggers>
             </Label>
             <Button x:Name="btnLogIn"
-                    Text="Iniciar Sesión"
+                    Text="Log In"
                     VerticalOptions="Center"
                     HorizontalOptions="FillAndExpand"
                     Style="{StaticResource btnStyle}"/>

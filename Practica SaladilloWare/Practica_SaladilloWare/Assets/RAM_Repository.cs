@@ -70,5 +70,15 @@ namespace Practica_SaladilloWare.Assets
 
             return Nombres.ToList();
         }
+
+        public static async Task<RAM> ComprobarNombre(String nombre)
+        {
+            RAM memoria;
+
+            ObservableCollection<RAM> memorias = new ObservableCollection<RAM>(await App.Ram_Repository.GetAllRAMAsync());
+            memoria = memorias.SingleOrDefault(p => p.Nombre == nombre);
+
+            return memoria;
+        }
     }
 }

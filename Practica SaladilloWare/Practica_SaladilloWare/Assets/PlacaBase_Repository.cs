@@ -71,5 +71,15 @@ namespace Practica_SaladilloWare.Assets
 
             return Nombres.ToList();
         }
+
+        public static async Task<PlacaBase> ComprobarNombre(String nombre)
+        {
+            PlacaBase placa;
+
+            ObservableCollection<PlacaBase> placas = new ObservableCollection<PlacaBase>(await App.PlacaBase_Repository.GetAllPlacasBaseAsync());
+            placa = placas.SingleOrDefault(p => p.Nombre == nombre);
+
+            return placa;
+        }
     }
 }

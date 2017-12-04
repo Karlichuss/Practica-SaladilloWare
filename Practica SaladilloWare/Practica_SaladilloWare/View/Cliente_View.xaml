@@ -78,7 +78,26 @@
                            Margin="10,0,0,0"/>
                     <ListView x:Name="lstResumen"
                               WidthRequest="300"
-                              HorizontalOptions="Center"/>
+                              HorizontalOptions="Center">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="5*"></ColumnDefinition>
+                                            <ColumnDefinition Width="1*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Text="{Binding Nombre}" HorizontalOptions="Start"/>
+                                        <Label Grid.Column="1" Text="{Binding Precio}" HorizontalOptions="End"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <Label x:Name="lblTotal"
+                           WidthRequest="300"
+                           HorizontalOptions="End"
+                           Style="{StaticResource lblStyle}"/>
                     <Button x:Name="btnConfirmar"
                             Text="Confirmar"
                             WidthRequest="300"

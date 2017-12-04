@@ -70,5 +70,15 @@ namespace Practica_SaladilloWare.Assets
 
             return procesador;
         }
+
+        public static async Task<Procesador> ComprobarNombre(String nombre)
+        {
+            Procesador procesador;
+
+            ObservableCollection<Procesador> procesadores = new ObservableCollection<Procesador>(await App.Procesador_Repository.GetAllProcesadoresAsync());
+            procesador = procesadores.SingleOrDefault(p => p.Nombre == nombre);
+
+            return procesador;
+        }
     }
 }

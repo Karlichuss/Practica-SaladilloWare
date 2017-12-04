@@ -71,5 +71,16 @@ namespace Practica_SaladilloWare.Assets
 
             return chasi;
         }
+
+        public static async Task<Chasis> ComprobarNombre(String nombre)
+        {
+            Chasis chasi;
+
+            ObservableCollection<Chasis> chasis = new ObservableCollection<Chasis>(await App.Chasis_Repository.GetAllChasisAsync());
+            chasi = chasis.SingleOrDefault(p => p.Nombre == nombre);
+
+            return chasi;
+        }
+
     }
 }

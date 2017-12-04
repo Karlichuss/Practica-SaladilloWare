@@ -70,5 +70,15 @@ namespace Practica_SaladilloWare.Assets
 
             return Nombres.ToList();
         }
+
+        public static async Task<TarjetaGrafica> ComprobarNombre(String nombre)
+        {
+            TarjetaGrafica tarjeta;
+
+            ObservableCollection<TarjetaGrafica> tarjetas = new ObservableCollection<TarjetaGrafica>(await App.TarjetaGrafica_Repository.GetAllTarjetassync());
+            tarjeta = tarjetas.SingleOrDefault(p => p.Nombre == nombre);
+
+            return tarjeta;
+        }
     }
 }
