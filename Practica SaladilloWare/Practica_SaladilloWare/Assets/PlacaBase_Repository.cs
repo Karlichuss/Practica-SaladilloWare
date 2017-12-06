@@ -56,6 +56,16 @@ namespace Practica_SaladilloWare.Assets
             return placa;
         }
 
+        public static async Task<PlacaBase> ComprobarId(int producto)
+        {
+            PlacaBase placa;
+
+            ObservableCollection<PlacaBase> placas = new ObservableCollection<PlacaBase>(await App.PlacaBase_Repository.GetAllPlacasBaseAsync());
+            placa = placas.SingleOrDefault(p => p.Id == producto);
+
+            return placa;
+        }
+
         public static async Task<List<String>> GetNombres()
         {
             List<PlacaBase> PlacasBase;

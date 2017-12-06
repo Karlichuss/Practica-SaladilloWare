@@ -55,6 +55,16 @@ namespace Practica_SaladilloWare.Assets
             return tarjeta;
         }
 
+        public static async Task<TarjetaGrafica> ComprobarId(int producto)
+        {
+            TarjetaGrafica tarjeta;
+
+            ObservableCollection<TarjetaGrafica> tarjetas = new ObservableCollection<TarjetaGrafica>(await App.TarjetaGrafica_Repository.GetAllTarjetassync());
+            tarjeta = tarjetas.SingleOrDefault(p => p.Id == producto);
+
+            return tarjeta;
+        }
+
         public static async Task<List<String>> GetNombres()
         {
             List<TarjetaGrafica> TarjetasGraficas;

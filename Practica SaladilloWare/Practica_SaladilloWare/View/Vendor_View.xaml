@@ -2,13 +2,123 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Practica_SaladilloWare.View.Vendor_View">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="lytStyle"
+                   TargetType="StackLayout">
+                <Setter Property="BackgroundColor"
+                        Value="#505050"/>
+            </Style>
+            <Style x:Key="lblStyle"
+                   TargetType="Label">
+                <Setter Property="TextColor"
+                        Value="White"/>
+            </Style>
+            <Style x:Key="btnStyle"
+                   TargetType="Button">
+                <Setter Property="TextColor"
+                        Value="White"/>
+                <Setter Property="BorderColor"
+                        Value="#999999"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Vendor_View"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="Center"
+                     Style="{StaticResource lytStyle}"
+                     Padding="25, 25">
+            <Label x:Name="lblBienvenida"
+                   Style="{StaticResource lblStyle}"
+                   FontSize="Large"/>
+            <ListView x:Name="lstResumen"
+                      HorizontalOptions="CenterAndExpand">
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"
+                               Text="Usuario"
+                               HorizontalOptions="Start"
+                               Style="{StaticResource lblStyle}"/>
+                        <Label Grid.Column="1"
+                               Text="PlacaBase"
+                               HorizontalOptions="Start"
+                               Style="{StaticResource lblStyle}"/>
+                        <Label Grid.Column="2"
+                               Text="Procesador"
+                               HorizontalOptions="Start"
+                               Style="{StaticResource lblStyle}"/>
+                        <Label Grid.Column="3"
+                               Text="Chasis"
+                               HorizontalOptions="Start"
+                               Style="{StaticResource lblStyle}"/>
+                        <Label Grid.Column="4"
+                               Text="RAM"
+                               HorizontalOptions="Start"
+                               Style="{StaticResource lblStyle}"/>
+                        <Label Grid.Column="5"
+                               Text="TarjetaGrafica"
+                               HorizontalOptions="Start"
+                               Style="{StaticResource lblStyle}"/>
+                        <Label Grid.Column="6"
+                               Text="Total"
+                               HorizontalOptions="Start"
+                               Style="{StaticResource lblStyle}"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0"
+                                       Text="{Binding Usuario}"
+                                       HorizontalOptions="Start"/>
+                                <Label Grid.Column="1"
+                                       Text="{Binding PlacaBase}"
+                                       HorizontalOptions="Start"/>
+                                <Label Grid.Column="2"
+                                       Text="{Binding Procesador}"
+                                       HorizontalOptions="Start"/>
+                                <Label Grid.Column="3"
+                                       Text="{Binding Chasis}"
+                                       HorizontalOptions="Start"/>
+                                <Label Grid.Column="4"
+                                       Text="{Binding RAM}"
+                                       HorizontalOptions="Start"/>
+                                <Label Grid.Column="5"
+                                       Text="{Binding TarjetaGrafica}"
+                                       HorizontalOptions="Start"/>
+                                <Label Grid.Column="6"
+                                       Text="{Binding Total}"
+                                       HorizontalOptions="Start"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnActualizar"
+                    Text="Actualizar"
+                    Style="{StaticResource btnStyle}"/>
             <Button x:Name="btnLogOut"
-                    Text="Cerrar Sesión"/>
+                    Text="Cerrar Sesión"
+                    Style="{StaticResource btnStyle}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

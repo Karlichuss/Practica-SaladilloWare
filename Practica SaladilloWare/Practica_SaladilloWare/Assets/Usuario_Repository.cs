@@ -63,16 +63,46 @@ namespace Practica_SaladilloWare.Assets
             return usuario;
         }
 
+        public static async Task<Usuario> ComprobarId(int user)
+        {
+            Usuario usuario;
+
+            ObservableCollection<Usuario> usuarios = new ObservableCollection<Usuario>(await App.Usuario_Repository.GetAllUsuarios());
+            usuario = usuarios.SingleOrDefault(p => p.Id == user);
+
+            return usuario;
+        }
+
         /// <summary>
         /// Comprueba si existe un usuario que tenga el nombre pasado por parametro.
         /// </summary>
         /// <param name="nombre">El nombre a buscar.</param>
         /// <returns>El propio usuario si se encuentra en la base de datos, o null si no se encuentra.</returns>
-        public static async Task<Usuario> ComprobarNombre(String nombre)
+        public static async Task<Boolean> ComprobarNombre(String nombre)
         {
-            Usuario usuario = new Usuario();
+            List<Usuario> usuario = new List<Usuario>();
             ObservableCollection<Usuario> usuarios = new ObservableCollection<Usuario>(await App.Usuario_Repository.GetAllUsuarios());
-            usuario = usuarios.SingleOrDefault(p => p.Nombre == nombre);
+            usuario = usuarios.Where(p => p.Nombre == nombre).ToList();
+
+            return usuario.Count > 0;
+        }
+
+        public static async Task<Usuario> GetUsuario(String nombre)
+        {
+            List<Usuario> listUsuarios = new List<Usuario>();
+            Usuario usuario;
+            ObservableCollection<Usuario> usuarios = new ObservableCollection<Usuario>(await App.Usuario_Repository.GetAllUsuarios());
+            listUsuarios = usuarios.Where(p => p.Nombre == nombre).ToList();
+
+            if (listUsuarios.Count > 0)
+            {
+                usuario = listUsuarios[0];
+            }
+            else
+            {
+                usuario = null;
+            }
+
             return usuario;
         }
 

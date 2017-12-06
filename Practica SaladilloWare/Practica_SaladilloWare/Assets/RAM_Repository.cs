@@ -55,6 +55,16 @@ namespace Practica_SaladilloWare.Assets
             return memoria;
         }
 
+        public static async Task<RAM> ComprobarId(int producto)
+        {
+            RAM memoria;
+
+            ObservableCollection<RAM> memorias = new ObservableCollection<RAM>(await App.Ram_Repository.GetAllRAMAsync());
+            memoria = memorias.SingleOrDefault(p => p.Id == producto);
+
+            return memoria;
+        }
+
         public static async Task<List<String>> GetNombres()
         {
             List<RAM> Memorias;

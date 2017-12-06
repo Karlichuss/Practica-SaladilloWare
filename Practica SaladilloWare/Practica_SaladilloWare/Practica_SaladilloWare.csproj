@@ -46,6 +46,7 @@
     <Compile Include="Assets\TarjetaGrafica_Repository.cs" />
     <Compile Include="Assets\Usuario_Repository.cs" />
     <Compile Include="Model\Chasis.cs" />
+    <Compile Include="Model\LineaPedido.cs" />
     <Compile Include="Model\Pedido.cs" />
     <Compile Include="Model\PlacaBase.cs" />
     <Compile Include="Model\Procesador.cs" />

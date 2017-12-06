@@ -9,41 +9,20 @@ namespace Practica_SaladilloWare.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LogIn_View : ContentPage
     {
-        LogIn_View_Model ViewModel = new LogIn_View_Model();
-        Usuario usuario;
+        LogIn_View_Model ViewModel;
 
         public LogIn_View()
         {
             InitializeComponent();
 
+            ViewModel = new LogIn_View_Model(this, Navigation, txtNombre, txtContrasenia);
+
+            BindingContext = ViewModel;
+
             btnLogIn.Clicked += async (sender, args) =>
             {
-                await EntrarAsync();
+                await ViewModel.IniciarSesionAsync();
             };
-        }
-
-        private async Task EntrarAsync()
-        {
-            await ViewModel.IniciarSesionAsync(txtNombre.Text, txtContrasenia.Text);
-
-            if (!ViewModel.Error)
-            {
-                usuario = await ViewModel.GetUsuario(txtNombre.Text);
-
-                if (ViewModel.EsCliente)
-                {
-                    await Navigation.PushModalAsync(new Cliente_View(usuario));
-                }
-                else
-                {
-                    await Navigation.PushModalAsync(new Vendor_View(usuario));
-                }
-            }
-            else
-            {
-                await DisplayAlert("ERROR", "Usuario y/o contraseña incorrectos.", "OK");
-                txtContrasenia.Text = "";
-            }
         }
     }
 }

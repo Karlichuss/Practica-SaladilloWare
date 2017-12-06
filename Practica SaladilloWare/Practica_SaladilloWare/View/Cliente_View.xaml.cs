@@ -19,6 +19,8 @@ namespace Practica_SaladilloWare.View
 
             ViewModel = new Cliente_View_Model(usuario);
 
+            BindingContext = ViewModel;
+
             InitViewsAsync();
 
             btnAceptar.Clicked += async (sender, args) =>
@@ -48,7 +50,7 @@ namespace Practica_SaladilloWare.View
         {
             DisplayAlert("¿Como realizar un pedido?",
                             "1. Seleccionas un componente de cada tipo para tu PC.\n" +
-                            "¡Asegurate de que No has dejado ningun componente sin elegir!\n\n" +
+                            "¡Asegurate de que no has dejado ningun componente sin elegir!\n\n" +
                             "2. Pulsa en el boton Aceptar, y revisa los productos que has seleccionado.\n\n" +
                             "3. Si estas satisfecho con tu seleccion, pulsa Confirmar para realizar el pedido.",
                             "Vale, ¡Entendido!, ¡Empezamos!");
@@ -78,6 +80,7 @@ namespace Practica_SaladilloWare.View
             picTarjetaGrafica.SelectedItem = -1;
 
             lstResumen.ItemsSource = new List<String>();
+            lblTotal.Text = "";
         }
 
         private void RealizarPedido()

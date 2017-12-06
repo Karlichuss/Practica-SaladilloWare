@@ -71,6 +71,16 @@ namespace Practica_SaladilloWare.Assets
             return procesador;
         }
 
+        public static async Task<Procesador> ComprobarId(int producto)
+        {
+            Procesador procesador;
+
+            ObservableCollection<Procesador> procesaodres = new ObservableCollection<Procesador>(await App.Procesador_Repository.GetAllProcesadoresAsync());
+            procesador = procesaodres.SingleOrDefault(p => p.Id == producto);
+
+            return procesador;
+        }
+
         public static async Task<Procesador> ComprobarNombre(String nombre)
         {
             Procesador procesador;

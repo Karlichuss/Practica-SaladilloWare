@@ -14,5 +14,10 @@ namespace Practica_SaladilloWare.Model
         public String Contrasenia { get; set; }
         [MaxLength(1), Column("Tipo")]
         public String Tipo { get; set; }
+
+        public static implicit operator Usuario(bool v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

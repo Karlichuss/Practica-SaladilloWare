@@ -54,6 +54,7 @@
             <Label x:Name="lblStatus"
                    HorizontalOptions="CenterAndExpand"
                    Margin="30"
+                   Text="{Binding Status}"
                    Style="{StaticResource lblStatusOKStyle}">
                 <Label.Triggers>
                     <DataTrigger TargetType ="Label"
