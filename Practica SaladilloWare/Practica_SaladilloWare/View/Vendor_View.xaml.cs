@@ -15,11 +15,11 @@ namespace Practica_SaladilloWare.View
         {
             InitializeComponent();
 
-            ViewModel = new Vendor_View_Model(usuario);
+            ViewModel = new Vendor_View_Model(this, Navigation, usuario);
 
             BindingContext = ViewModel;
 
-            InitViewsAsync();
+            InitViews();
 
             btnActualizar.Clicked += async (sender, args) =>
             {
@@ -32,16 +32,16 @@ namespace Practica_SaladilloWare.View
             };
         }
 
-        private async Task InitViewsAsync()
+        private async Task InitViews()
         {
             await DisplayAlert("¿Qué puedo hacer?",
                             "1. Consultar los pedidos realizados.\n\n" +
                             "2. Importar los nuevos precios del catalogo desde un XML.",
                             "Vale, ¡Entendido!, ¡Empezamos!");
 
-            lblBienvenida.Text = "Bienvenido, " + ViewModel.usuario.Nombre;
+            lblBienvenida.Text = "Bienvenido, " + ViewModel.Usuario.Nombre;
 
-            lstResumen.ItemsSource = await ViewModel.CargarPedidosAsync();
+            lstResumen.ItemsSource = await ViewModel.CargarPedidos();
         }
     }
 }

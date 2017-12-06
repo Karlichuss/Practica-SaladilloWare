@@ -71,6 +71,7 @@
                             Text="Aceptar"
                             WidthRequest="300"
                             HorizontalOptions="Center"
+                            IsEnabled="False"
                             Style="{StaticResource btnStyle}"/>
                     <Label x:Name="lblResumen"
                            Text="Resumen: "
@@ -91,7 +92,7 @@
                                        Style="{StaticResource lblStyle}"/>
                                 <Label Grid.Column="1" 
                                        Text="Precio" 
-                                       HorizontalOptions="Start"
+                                       HorizontalOptions="End"
                                        Style="{StaticResource lblStyle}"/>
                             </Grid>
                         </ListView.Header>
@@ -123,6 +124,7 @@
                             Text="Confirmar"
                             WidthRequest="300"
                             HorizontalOptions="Center"
+                            IsEnabled="False"
                             Style="{StaticResource btnStyle}"/>
                     <Button x:Name="btnCancelar"
                             Text="Cancelar"

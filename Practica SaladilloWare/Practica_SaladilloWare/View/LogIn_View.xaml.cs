@@ -21,7 +21,7 @@ namespace Practica_SaladilloWare.View
 
             btnLogIn.Clicked += async (sender, args) =>
             {
-                await ViewModel.IniciarSesionAsync();
+                await ViewModel.IniciarSesion();
             };
         }
     }

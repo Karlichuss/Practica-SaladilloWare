@@ -3,18 +3,23 @@ using Practica_SaladilloWare.Model;
 using System.Collections.Generic;
 using Practica_SaladilloWare.Assets;
 using System;
+using Xamarin.Forms;
 
 namespace Practica_SaladilloWare.View_Model
 {
     public class Vendor_View_Model
     {
 
-        public Usuario usuario;
-        public List<Pedido> pedidos;
+        public Usuario Usuario;
+        List<Pedido> pedidos;
+        INavigation Navigation;
+        Page Page;
 
-        public Vendor_View_Model(Usuario usuario)
+        public Vendor_View_Model(Page page, INavigation navigation, Usuario usuario)
         {
-            this.usuario = usuario;
+            Page = page;
+            Navigation = navigation;
+            Usuario = usuario;
         }
 
         public Task ActualizarPrecios()
@@ -22,7 +27,7 @@ namespace Practica_SaladilloWare.View_Model
             return null;
         }
 
-        public async Task<List<LineaPedido>> CargarPedidosAsync()
+        public async Task<List<LineaPedido>> CargarPedidos()
         {
             pedidos = await App.Pedido_Repository.GetAllPedidosAsync();
 

@@ -9,9 +9,7 @@ namespace Practica_SaladilloWare.View_Model
 {
     public class LogIn_View_Model
     {
-        public Boolean Error { get; set; }
-        public Boolean EsCliente { get; set; }
-        public Usuario Usuario;
+        Usuario Usuario;
         INavigation Navigation;
         Page Page;
         Entry txtNombre, txtContrasenia;
@@ -22,11 +20,9 @@ namespace Practica_SaladilloWare.View_Model
             Navigation = navigation;
             this.txtNombre = txtNombre;
             this.txtContrasenia = txtContrasenia;
-            Error = false;
-            EsCliente = false;
         }
 
-        public async Task IniciarSesionAsync()
+        public async Task IniciarSesion()
         {
             Cliente_View Cliente_View;
             Vendor_View Vendor_View;
