@@ -1,8 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using Practica_SaladilloWare.Assets;
 using Practica_SaladilloWare.Model;
 using System.Collections.Generic;
-using Practica_SaladilloWare.Assets;
-using System;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Practica_SaladilloWare.View_Model

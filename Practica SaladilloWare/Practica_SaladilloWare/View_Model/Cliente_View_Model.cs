@@ -38,7 +38,11 @@ namespace Practica_SaladilloWare.View_Model
             btnAceptar.IsEnabled = true;
             btnConfirmar.IsEnabled = true;
 
-            if (picPlacaBase.SelectedIndex == -1 || picProcesador.SelectedIndex == -1 || picChasis.SelectedIndex == -1 || picMemoria.SelectedIndex == -1 || picTarjetaGrafica.SelectedIndex == -1)
+            if (picPlacaBase.SelectedIndex == -1 || 
+                picProcesador.SelectedIndex == -1 || 
+                picChasis.SelectedIndex == -1 || 
+                picMemoria.SelectedIndex == -1 || 
+                picTarjetaGrafica.SelectedIndex == -1)
             {
                 btnAceptar.IsEnabled = false;
                 btnConfirmar.IsEnabled = false;
