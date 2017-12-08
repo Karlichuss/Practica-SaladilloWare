@@ -49,10 +49,13 @@ namespace Practica_SaladilloWare.View_Model
         /// <returns></returns>
         public async Task ActualizarPreciosAsync()
         {
+            // Actualizamos la base de datos con los datos del XML.
             await XML_Data_Loader.LoadData();
 
+            // Notificamos al usaurio que la base de datos se ha actualizado.
             await Page.DisplayAlert("Datos actualizados con exito.", "Los nuevos precios estan ya disponibles.", "OK");
 
+            // Refrescamos la lista de los pedidos aplicando los nuevos precios.
             lstResumen.ItemsSource = await CargarPedidos();
 
         }

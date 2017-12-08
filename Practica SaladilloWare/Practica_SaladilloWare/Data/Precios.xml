@@ -33,7 +33,7 @@
     <Torre>
       <ID>2</ID>
       <NOMBRE>Owlotech EVO USB 3.0 500W</NOMBRE>
-      <PRECIO>45,50</PRECIO>
+      <PRECIO>45.50</PRECIO>
     </Torre>
   </Torres>
 	<Memorias>
@@ -45,7 +45,7 @@
     <Memoria>
       <ID>2</ID>
       <NOMBRE>Kingston ValueRAM SO-DIMM DDR3L 1600 PC3-12800 4GB CL11</NOMBRE>
-      <PRECIO>45,50</PRECIO>
+      <PRECIO>45.50</PRECIO>
     </Memoria>
 	</Memorias>
 	<Graficas>
