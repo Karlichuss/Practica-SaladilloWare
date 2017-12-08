@@ -10,21 +10,35 @@ namespace Practica_SaladilloWare.Assets
 {
     public class Pedido_Repository
     {
+        #region Declaracion de variables
+
         public string StatusMessage { get; set; }
         private SQLiteAsyncConnection conn;
 
+        #endregion
+
+        #region Constructores
+
         /// <summary>
-        /// Crea la tabla pedido y la conexion
+        /// Constructor. Realiza el enlace de la base de datos con el modelo y crea la tabla. 
         /// </summary>
-        /// <param name="dbPath">ruta de donde se aloja la bdd</param>
+        /// <param name="dbPath">La ruta de la base de datos.</param>
         public Pedido_Repository(string dbPath)
         {
-            // TODO: Initialize a new SQLiteConnection
+            // Inicializamos el SQLiteconnection.
             conn = new SQLiteAsyncConnection(dbPath);
-            // TODO: Create the Person table
-            //Para que la ejecucion no siga y se espere a que este creada la tabla ponemos el wait
+            // Creamos la tabla Pedido.
+            // Para que la ejecucion no siga y se espere a que este creada la tabla ponemos el wait
             conn.CreateTableAsync<Pedido>().Wait();
         }
+
+        #endregion
+
+        #region Delete
+
+        #endregion
+
+        #region Add
 
         /// <summary>
         /// Se añade un nuevo pedido:
@@ -46,26 +60,26 @@ namespace Practica_SaladilloWare.Assets
             int result = 0;
             try
             {
-                //basic validation to user
+                //Validamos que exista el Usuario
                 if (Usuario_Repository.ComprobarId(user).Equals(null))
                     throw new Exception("Valid user required");
-                //basic validation to placaBase
+                //Validamos que exista la Placa Base
                 if (PlacaBase_Repository.ComprobarId(placa).Equals(null))
                     throw new Exception("Valid placa required");
-                //basic validation to Procesador
+                //Validamos que exista el Procesador
                 if (Procesador_Repository.ComprobarId(procesador).Equals(null))
                     throw new Exception("Valid procesador required");
-                //basic validation to tarjeta
+                //Validamos que exista la Tarjeta Grafica
                 if (TarjetaGrafica_Repository.ComprobarId(tarjeta).Equals(null))
                     throw new Exception("Valid tarjeta grafica required");
-                //basic validation to RAM
+                //Validamos que exista la Memoria RAM
                 if (RAM_Repository.ComprobarId(RAM).Equals(null))
                     throw new Exception("Valid RAM required");
-                //basic validation to chasis
+                //Validamos que exista el Chasis
                 if (Chasis_Repository.ComprobarId(chasis).Equals(null))
                     throw new Exception("Valid chasis required");
 
-                // TODO: insert a new person into the Person table
+                // Introducimos la nueva linea de pedido.
                 result = await conn.InsertAsync(new Pedido { Usuario = user.Id, PlacaBase = placa.Id, Procesador = procesador.Id, TarjetaGrafica = tarjeta.Id, RAM = RAM.Id, Chasis = chasis.Id });
 
                 StatusMessage = string.Format("{0} record(s) added [User: {1} [PlacaBase: {2} [Procesador: {3} [TarjetaGrafica: {4} [RAM: {5} [Chasis: {6})", result, user, placa, procesador, tarjeta, RAM, chasis);
@@ -75,6 +89,10 @@ namespace Practica_SaladilloWare.Assets
                 StatusMessage = string.Format("Failed to add {0}. Error: {1}", user, ex.Message);
             }
         }
+
+        #endregion
+
+        #region Select
 
         /// <summary>
         /// Devuelve todos los pedidos
@@ -86,9 +104,7 @@ namespace Practica_SaladilloWare.Assets
             List<Pedido> lst = new List<Pedido>();
             try
             {
-                // TODO: return a list of people saved to the Person table in the database7
                 lst = await conn.Table<Pedido>().ToListAsync();
-
             }
             catch (Exception ex)
             {
@@ -133,10 +149,10 @@ namespace Practica_SaladilloWare.Assets
         }
 
         /// <summary>
-        /// Comprueba si existe un usuario por parametro
+        /// Comprueba si existe el id recibido por parametro.
         /// </summary>
-        /// <param name="pedido">Pedido</param>
-        /// <returns>Producto o null</returns>
+        /// <param name="producto">Id del chasis a comprobar.</param>
+        /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<Pedido> ComprobarId(Pedido pedido)
         {
             Pedido pe;
@@ -146,5 +162,8 @@ namespace Practica_SaladilloWare.Assets
 
             return pe;
         }
+
+        #endregion
+
     }
 }

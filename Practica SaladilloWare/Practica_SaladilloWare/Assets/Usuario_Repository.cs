@@ -10,31 +10,45 @@ namespace Practica_SaladilloWare.Assets
 {
     public class Usuario_Repository
     {
-        public string StatusMessage { get; set; }
-        public const string TIPO_CLIENTE = "C";
+        #region Declaracion de variables
 
+
+        public string StatusMessage { get; set; }
         private SQLiteAsyncConnection conn;
 
+        public const string TIPO_CLIENTE = "C";
+
+        #endregion
+
+        #region Constructores
+
         /// <summary>
-        /// Crea la tabla y la conexion 
+        /// Constructor. Realiza el enlace de la base de datos con el modelo y crea la tabla. 
         /// </summary>
-        /// <param name="dbPath">Ruta di¡onde se aloja la bdd</param>
+        /// <param name="dbPath">La ruta de la base de datos.</param>
         public Usuario_Repository(string dbPath)
         {
-            // Inicializamos una nueva instancia de SQLiteConnection
+            // Inicializamos el SQLiteconnection.
             conn = new SQLiteAsyncConnection(dbPath);
-            // Creamos la tabla Usuario
+            // Creamos la tabla PlacaBase.
             // Para que la ejecucion no siga y se espere a que este creada la tabla ponemos el wait
             conn.CreateTableAsync<Usuario>().Wait();
         }
 
+        #endregion
+
+        #region Delete
+
+        #endregion
+
+        #region Select
+
         /// <summary>
-        /// Recorre la tabla Usuario y nos permite acceder a estos datos en forma de Coleccion
+        /// Obtiene de la tabla todos los componentes.
         /// </summary>
-        /// <returns>Una Lista de Objetos de tipo Usuario</returns>
+        /// <returns>Una coleccion de todos los elementos que se encontraban en la tabla.</returns>
         public async Task<List<Usuario>> GetAllUsuarios()
         {
-            //Creamos la lista de personas
             List<Usuario> lst = new List<Usuario>();
             try
             {
@@ -42,17 +56,17 @@ namespace Practica_SaladilloWare.Assets
             }
             catch (Exception ex)
             {
-                StatusMessage = string.Format("ERROR: No pueden leerse los datos. {0}", ex.Message);
+                StatusMessage = string.Format("Failed to retrieve data. {0}", ex.Message);
             }
 
             return lst;
         }
 
         /// <summary>
-        /// Comprueba si existe un usuario, pasado por parametro.
+        /// Comprueba si existe el id recibido por parametro.
         /// </summary>
-        /// <param name="usuario">Usuario a buscar</param>
-        /// <returns>El propio usuario si se encuentra en la base de datos, o null si no se encuentra.</returns>
+        /// <param name="producto">Id del chasis a comprobar.</param>
+        /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<Usuario> ComprobarId(Usuario user)
         {
             Usuario usuario;
@@ -63,6 +77,11 @@ namespace Practica_SaladilloWare.Assets
             return usuario;
         }
 
+        /// <summary>
+        /// Comprueba si existe el chasis recibido por parametro.
+        /// </summary>
+        /// <param name="producto">Chasis a comprobar.</param>
+        /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<Usuario> ComprobarId(int user)
         {
             Usuario usuario;
@@ -87,6 +106,11 @@ namespace Practica_SaladilloWare.Assets
             return usuario.Count > 0;
         }
 
+        /// <summary>
+        /// Comprueba si existe el nombre recibido por parametro.
+        /// </summary>
+        /// <param name="producto">Nombre del chasis a comprobar.</param>
+        /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<Usuario> GetUsuario(String nombre)
         {
             List<Usuario> listUsuarios = new List<Usuario>();
@@ -144,12 +168,17 @@ namespace Practica_SaladilloWare.Assets
             return valido;
         }
 
+        /// <summary>
+        /// Comprueba si el tipo de usuario pasado por parametro es Cliente o no.
+        /// </summary>
+        /// <param name="user">El nombre del usuario a comprobar.</param>
+        /// <returns></returns>
         public static async Task<Boolean> EsCliente(String user)
         {
             Boolean valido = false;
             Usuario usuario = await ComprobarNombre(user);
 
-            // Comprobamos si existe el usuario, si es un cliente o un vendedor
+            // Comprobamos si existe el usuario, si es un cliente o un vendedor.
             if (!usuario.Nombre.Equals(null) || !usuario.Nombre.Equals(""))
             {
                 if (usuario.Tipo == TIPO_CLIENTE)
@@ -159,5 +188,8 @@ namespace Practica_SaladilloWare.Assets
             }
             return valido;
         }
+
+        #endregion
+
     }
 }

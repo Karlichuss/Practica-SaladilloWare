@@ -10,18 +10,78 @@ namespace Practica_SaladilloWare.Assets
 {
     public class Procesador_Repository
     {
+        #region Declaracion de variables
+
         public string StatusMessage { get; set; }
         private SQLiteAsyncConnection conn;
 
+        #endregion
+
+        #region Constructores
+
+        /// <summary>
+        /// Constructor. Realiza el enlace de la base de datos con el modelo y crea la tabla. 
+        /// </summary>
+        /// <param name="dbPath">La ruta de la base de datos.</param>
         public Procesador_Repository(string dbPath)
         {
-            // TODO: Initialize a new SQLiteConnection
+            // Inicializamos el SQLiteconnection.
             conn = new SQLiteAsyncConnection(dbPath);
-            // TODO: Create the Person table
-            //Para que la ejecucion no siga y se espere a que este creada la tabla ponemos el wait
+            // Creamos la tabla PlacaBase.
+            // Para que la ejecucion no siga y se espere a que este creada la tabla ponemos el wait
             conn.CreateTableAsync<Procesador>().Wait();
         }
 
+        #endregion
+
+        #region Delete
+
+        /// <summary>
+        /// Resetea la tabla y sus datos.
+        /// </summary>
+        public void Reset()
+        {
+            conn.DropTableAsync<Procesador>().Wait();
+            conn.CreateTableAsync<Procesador>().Wait();
+        }
+
+        #endregion
+
+        #region Add
+
+        /// <summary>
+        /// Añade un nuevo elemento en la tabla.
+        /// </summary>
+        /// <param name="Nombre">El nombre del elemento a añadir</param>
+        /// <param name="Precio">El precio del elemento a añador</param>
+        /// <returns></returns>
+        public async Task Add_Item(String Nombre, String Precio)
+        {
+            int result = 0;
+            try
+            {
+                //Comprobamos que el nombre y el precio sean validos.
+                if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Precio))
+                    throw new Exception("Valid values required");
+
+                // Introducimos la nueva linea de pedido.
+                result = await conn.InsertAsync(new Procesador { Nombre = Nombre, Precio = float.Parse(Precio) });
+
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = string.Format("Failed to add {0}. Error: {1}", Nombre, ex.Message);
+            }
+        }
+
+        #endregion
+
+        #region Select
+
+        /// <summary>
+        /// Obtiene de la tabla todos los nombres de los componentes.
+        /// </summary>
+        /// <returns>Una coleccion de todos los nombres de los elementos que se encontraban en la tabla.</returns>
         public static async Task<List<String>> GetNombres()
         {
             List<Procesador> Procesadores;
@@ -38,15 +98,16 @@ namespace Practica_SaladilloWare.Assets
             return Nombres.ToList();
         }
 
+        /// <summary>
+        /// Obtiene de la tabla todos los componentes.
+        /// </summary>
+        /// <returns>Una coleccion de todos los elementos que se encontraban en la tabla.</returns>
         public async Task<List<Procesador>> GetAllProcesadoresAsync()
         {
-            //Creamos la lista de personas
             List<Procesador> lst = new List<Procesador>();
             try
             {
-                // TODO: return a list of people saved to the Person table in the database7
                 lst = await conn.Table<Procesador>().ToListAsync();
-
             }
             catch (Exception ex)
             {
@@ -57,10 +118,10 @@ namespace Practica_SaladilloWare.Assets
         }
 
         /// <summary>
-        /// Comprueba si existe la procesador recibida por parametro
+        /// Comprueba si existe el chasis recibido por parametro.
         /// </summary>
-        /// <param name="producto">Procesador</param>
-        /// <returns>Producto o null</returns>
+        /// <param name="producto">Chasis a comprobar.</param>
+        /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<Procesador> ComprobarId(Procesador producto)
         {
             Procesador procesador;
@@ -71,6 +132,11 @@ namespace Practica_SaladilloWare.Assets
             return procesador;
         }
 
+        /// <summary>
+        /// Comprueba si existe el chasis recibido por parametro.
+        /// </summary>
+        /// <param name="producto">Chasis a comprobar.</param>
+        /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<Procesador> ComprobarId(int producto)
         {
             Procesador procesador;
@@ -81,6 +147,11 @@ namespace Practica_SaladilloWare.Assets
             return procesador;
         }
 
+        /// <summary>
+        /// Comprueba si existe el nombre recibido por parametro.
+        /// </summary>
+        /// <param name="producto">Nombre del chasis a comprobar.</param>
+        /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<Procesador> ComprobarNombre(String nombre)
         {
             Procesador procesador;
@@ -90,5 +161,7 @@ namespace Practica_SaladilloWare.Assets
 
             return procesador;
         }
+
+        #endregion
     }
 }

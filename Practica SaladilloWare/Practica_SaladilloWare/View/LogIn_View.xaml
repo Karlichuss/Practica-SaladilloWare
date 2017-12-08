@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Practica_SaladilloWare.View.LogIn_View">
+    <!-- Hoja de Estilos -->
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="lytStyle"
@@ -30,6 +31,7 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+    <!-- Layout -->
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center"
                      HorizontalOptions="Center"
