@@ -27,7 +27,7 @@ namespace Practica_SaladilloWare.Assets
         {
             // Inicializamos el SQLiteconnection.
             conn = new SQLiteAsyncConnection(dbPath);
-            // Creamos la tabla PlacaBase.
+            // Creamos la tabla RAM.
             // Para que la ejecucion no siga y se espere a que este creada la tabla ponemos el wait
             conn.CreateTableAsync<RAM>().Wait();
         }
@@ -53,7 +53,7 @@ namespace Practica_SaladilloWare.Assets
         /// Añade un nuevo elemento en la tabla.
         /// </summary>
         /// <param name="Nombre">El nombre del elemento a añadir</param>
-        /// <param name="Precio">El precio del elemento a añador</param>
+        /// <param name="Precio">El precio del elemento a añadir</param>
         /// <returns></returns>
         public async Task Add_Item(String Nombre, String Precio)
         {
@@ -64,7 +64,7 @@ namespace Practica_SaladilloWare.Assets
                 if (string.IsNullOrEmpty(Nombre) || string.IsNullOrEmpty(Precio))
                     throw new Exception("Valid values required");
 
-                // Introducimos la nueva linea de pedido.
+                // Introducimos el nuevo producto.
                 result = await conn.InsertAsync(new RAM { Nombre = Nombre, Precio = float.Parse(Precio) });
 
             }
@@ -81,7 +81,7 @@ namespace Practica_SaladilloWare.Assets
         /// <summary>
         /// Obtiene de la tabla todos los componentes.
         /// </summary>
-        /// <returns>Una coleccion de todos los elementos que se encontraban en la tabla.</returns>
+        /// <returns>Una colección de todos los elementos que se encontraban en la tabla.</returns>
         public async Task<List<RAM>> GetAllRAMAsync()
         {
             List<RAM> lst = new List<RAM>();
@@ -98,9 +98,9 @@ namespace Practica_SaladilloWare.Assets
         }
 
         /// <summary>
-        /// Comprueba si existe el id recibido por parametro.
+        /// Comprueba si existe el id recibido por parámetro.
         /// </summary>
-        /// <param name="producto">Id del chasis a comprobar.</param>
+        /// <param name="producto">Id del producto a comprobar.</param>
         /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<RAM> ComprobarId(RAM producto)
         {
@@ -113,9 +113,9 @@ namespace Practica_SaladilloWare.Assets
         }
 
         /// <summary>
-        /// Comprueba si existe el chasis recibido por parametro.
+        /// Comprueba si existe el producto recibido por parámetro.
         /// </summary>
-        /// <param name="producto">Chasis a comprobar.</param>
+        /// <param name="producto">Producto a comprobar.</param>
         /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<RAM> ComprobarId(int producto)
         {
@@ -130,7 +130,7 @@ namespace Practica_SaladilloWare.Assets
         /// <summary>
         /// Obtiene de la tabla todos los nombres de los componentes.
         /// </summary>
-        /// <returns>Una coleccion de todos los nombres de los elementos que se encontraban en la tabla.</returns>
+        /// <returns>Una colección de todos los nombres de los elementos que se encontraban en la tabla.</returns>
         public static async Task<List<String>> GetNombres()
         {
             List<RAM> Memorias;
@@ -148,9 +148,9 @@ namespace Practica_SaladilloWare.Assets
         }
 
         /// <summary>
-        /// Comprueba si existe el nombre recibido por parametro.
+        /// Comprueba si existe el nombre recibido por parámetro.
         /// </summary>
-        /// <param name="producto">Nombre del chasis a comprobar.</param>
+        /// <param name="producto">Nombre del producto a comprobar.</param>
         /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<RAM> ComprobarNombre(String nombre)
         {

@@ -22,7 +22,7 @@ namespace Practica_SaladilloWare.View
         /// <summary>
         /// Constructor. Le pasa el usuario del parametro a su ViewModel.
         /// </summary>
-        /// <param name="usuario">El usuario que inicia la sesion.</param>
+        /// <param name="usuario">El usuario que inicia la sesión.</param>
         public Vendor_View(Usuario usuario)
         {
             InitializeComponent();
@@ -36,13 +36,13 @@ namespace Practica_SaladilloWare.View
             // Hacemos las primeras operaciones para configurar la vista.
             InitViews();
 
-            // Cuando hacemos click en Actualizar, actualizamos el catalogo a los nuevos preductos que hay en un archivo XML.
+            // Cuando hacemos click en Actualizar, actualizamos el catálogo a los nuevos preductos que hay en un archivo XML.
             btnActualizar.Clicked += async (sender, args) =>
             {
                 await ViewModel.ActualizarPreciosAsync();
             };
 
-            // Cuando hacemos click en Cerrar Sesion, volvemos a la vista de LogIn.
+            // Cuando hacemos click en Cerrar Sesión, volvemos a la vista de LogIn.
             btnLogOut.Clicked += async (sender, args) =>
             {
                 await Navigation.PushModalAsync(new LogIn_View());

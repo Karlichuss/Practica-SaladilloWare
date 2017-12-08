@@ -12,7 +12,6 @@ namespace Practica_SaladilloWare.Assets
     {
         #region Declaracion de variables
 
-
         public string StatusMessage { get; set; }
         private SQLiteAsyncConnection conn;
 
@@ -30,8 +29,8 @@ namespace Practica_SaladilloWare.Assets
         {
             // Inicializamos el SQLiteconnection.
             conn = new SQLiteAsyncConnection(dbPath);
-            // Creamos la tabla PlacaBase.
-            // Para que la ejecucion no siga y se espere a que este creada la tabla ponemos el wait
+            // Creamos la tabla Usuario.
+            // Para que la ejecucion no siga y se espere a que esté creada la tabla ponemos el wait
             conn.CreateTableAsync<Usuario>().Wait();
         }
 
@@ -46,7 +45,7 @@ namespace Practica_SaladilloWare.Assets
         /// <summary>
         /// Obtiene de la tabla todos los componentes.
         /// </summary>
-        /// <returns>Una coleccion de todos los elementos que se encontraban en la tabla.</returns>
+        /// <returns>Una colección de todos los elementos que se encuentren en la tabla.</returns>
         public async Task<List<Usuario>> GetAllUsuarios()
         {
             List<Usuario> lst = new List<Usuario>();
@@ -63,10 +62,10 @@ namespace Practica_SaladilloWare.Assets
         }
 
         /// <summary>
-        /// Comprueba si existe el id recibido por parametro.
+        /// Comprueba si existe el id recibido por parámetro.
         /// </summary>
-        /// <param name="producto">Id del chasis a comprobar.</param>
-        /// <returns>El mismo producto, o null si no existe.</returns>
+        /// <param name="user">Id del elemento a comprobar.</param>
+        /// <returns>El mismo usuario, o null si no existe.</returns>
         public static async Task<Usuario> ComprobarId(Usuario user)
         {
             Usuario usuario;
@@ -78,10 +77,10 @@ namespace Practica_SaladilloWare.Assets
         }
 
         /// <summary>
-        /// Comprueba si existe el chasis recibido por parametro.
+        /// Comprueba si existe el elemento recibido por parametro.
         /// </summary>
-        /// <param name="producto">Chasis a comprobar.</param>
-        /// <returns>El mismo producto, o null si no existe.</returns>
+        /// <param name="user">Usuario a comprobar.</param>
+        /// <returns>El mismo usuario, o null si no existe.</returns>
         public static async Task<Usuario> ComprobarId(int user)
         {
             Usuario usuario;
@@ -93,7 +92,7 @@ namespace Practica_SaladilloWare.Assets
         }
 
         /// <summary>
-        /// Comprueba si existe un usuario que tenga el nombre pasado por parametro.
+        /// Comprueba si existe un usuario que tenga el nombre pasado por parámetro.
         /// </summary>
         /// <param name="nombre">El nombre a buscar.</param>
         /// <returns>El propio usuario si se encuentra en la base de datos, o null si no se encuentra.</returns>
@@ -107,10 +106,10 @@ namespace Practica_SaladilloWare.Assets
         }
 
         /// <summary>
-        /// Comprueba si existe el nombre recibido por parametro.
+        /// Comprueba si existe el nombre recibido por parámetro.
         /// </summary>
-        /// <param name="producto">Nombre del chasis a comprobar.</param>
-        /// <returns>El mismo producto, o null si no existe.</returns>
+        /// <param name="nombre">Nombre del usuario a comprobar.</param>
+        /// <returns>El mismo usuario, o null si no existe.</returns>
         public static async Task<Usuario> GetUsuario(String nombre)
         {
             List<Usuario> listUsuarios = new List<Usuario>();
@@ -131,9 +130,9 @@ namespace Practica_SaladilloWare.Assets
         }
 
         /// <summary>
-        /// Devuelve la contraseña de un usuario pasado por parametro
+        /// Devuelve la contraseña de un usuario pasado por parámetro
         /// </summary>
-        /// <param name="usuario">Usuario</param>
+        /// <param name="user">Usuario</param>
         /// <returns>Usuario o null</returns>
         public static async Task<String> GetContrasenia(Usuario user)
         {
@@ -172,7 +171,7 @@ namespace Practica_SaladilloWare.Assets
         /// Comprueba si el tipo de usuario pasado por parametro es Cliente o no.
         /// </summary>
         /// <param name="user">El nombre del usuario a comprobar.</param>
-        /// <returns></returns>
+        /// <returns>True si es Cliente, False si es Vendor.</returns>
         public static async Task<Boolean> EsCliente(String user)
         {
             Boolean valido = false;

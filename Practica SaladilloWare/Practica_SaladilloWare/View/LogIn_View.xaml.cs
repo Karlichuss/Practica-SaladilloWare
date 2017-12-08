@@ -11,6 +11,7 @@ namespace Practica_SaladilloWare.View
     {
         #region Declaracion de variables
 
+        // ViewModel asociado a la vista.
         LogIn_View_Model ViewModel;
 
         #endregion
@@ -32,7 +33,7 @@ namespace Practica_SaladilloWare.View
 
             #region Acciones
 
-            // Cuando hacemos click en Iniciar Sesion, realiza las comprobaciones de que el usuario y la contraseña son correctas y realiza la navegacion a la vista que corresponda.
+            // Cuando hacemos click en Iniciar Sesión, realiza las comprobaciones de que el usuario y la contraseña son correctas y realiza la navegación a la vista que corresponda.
             btnLogIn.Clicked += async (sender, args) =>
             {
                 await ViewModel.IniciarSesion();

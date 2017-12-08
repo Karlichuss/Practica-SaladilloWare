@@ -41,12 +41,7 @@ namespace Practica_SaladilloWare.Assets
         #region Add
 
         /// <summary>
-        /// Se añade un nuevo pedido:
-        /// 
-        /// comprobamos que todos los productos pasados existen
-        /// si existen se hace ek Insert son Async
-        /// Se muestra un mensaje por consola en caso de exito y fallo
-        /// 
+        /// Añade un nuevo pedido a la tabla.
         /// </summary>
         /// <param name="user"></param>
         /// <param name="placa"></param>
@@ -60,22 +55,22 @@ namespace Practica_SaladilloWare.Assets
             int result = 0;
             try
             {
-                //Validamos que exista el Usuario
+                // Validamos que exista el Usuario.
                 if (Usuario_Repository.ComprobarId(user).Equals(null))
                     throw new Exception("Valid user required");
-                //Validamos que exista la Placa Base
+                // Validamos que exista la Placa Base.
                 if (PlacaBase_Repository.ComprobarId(placa).Equals(null))
                     throw new Exception("Valid placa required");
-                //Validamos que exista el Procesador
+                // Validamos que exista el Procesador.
                 if (Procesador_Repository.ComprobarId(procesador).Equals(null))
                     throw new Exception("Valid procesador required");
-                //Validamos que exista la Tarjeta Grafica
+                // Validamos que exista la Tarjeta Grafica.
                 if (TarjetaGrafica_Repository.ComprobarId(tarjeta).Equals(null))
                     throw new Exception("Valid tarjeta grafica required");
-                //Validamos que exista la Memoria RAM
+                // Validamos que exista la Memoria RAM.
                 if (RAM_Repository.ComprobarId(RAM).Equals(null))
                     throw new Exception("Valid RAM required");
-                //Validamos que exista el Chasis
+                // Validamos que exista el Chasis.
                 if (Chasis_Repository.ComprobarId(chasis).Equals(null))
                     throw new Exception("Valid chasis required");
 
@@ -95,12 +90,11 @@ namespace Practica_SaladilloWare.Assets
         #region Select
 
         /// <summary>
-        /// Devuelve todos los pedidos
+        /// Devuelve todos los pedidos.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Una colección de Pedidos.</returns>
         public async Task<List<Pedido>> GetAllPedidosAsync()
         {
-            //Creamos la lista de personas
             List<Pedido> lst = new List<Pedido>();
             try
             {
@@ -114,45 +108,12 @@ namespace Practica_SaladilloWare.Assets
             return lst;
         }
 
-        /// <summary>
-        /// Devuelve el calculo de de la suma del precio de todos los productos de una tabla
-        /// </summary>
-        /// <param name="pedido"></param>
-        /// <returns></returns>
-        public async Task<float> TotalPedidoAsync(Pedido pedido)
-        {
-            float suma = 0.0f;
-            try
-            {
-                //basic validation to pedido
-                if (ComprobarId(pedido).Equals(null))
-                    throw new Exception("Valid user required");
-
-                // TODO: insert a new person into the Person table
-                suma = await conn.ExecuteAsync("select sum(pb.precio, cpu.precio, gpu.precio, ram.precio, chasis.precio)" +
-                    "from Pedido as p " +
-                    "left join PlacaBase as pb on p.placabase = pb.id " +
-                    "left join Procesador as cpu on p.procesador = cpu.id " +
-                    "left join TarjetaGrafica as gpu on p.tarjetagrafica = gpu.id " +
-                    "left join RAM as ram on p.memoria = ram.id " +
-                    "left join Chasis as chasis on p.cajaPC = chasis.id " +
-                    "where p.numPedido = " + pedido.Id + " and p.usuario = " + pedido.Id + ";");
-
-                StatusMessage = string.Format("{0} record(s) sum Precio Total : {0}", suma);
-            }
-            catch (Exception ex)
-            {
-                StatusMessage = string.Format("Failed to sum {0}. Error: {1}", pedido, ex.Message);
-            }
-
-            return suma;
-        }
-
+        
         /// <summary>
         /// Comprueba si existe el id recibido por parametro.
         /// </summary>
-        /// <param name="producto">Id del chasis a comprobar.</param>
-        /// <returns>El mismo producto, o null si no existe.</returns>
+        /// <param name="producto">Id del pedido a comprobar.</param>
+        /// <returns>El mismo pedido, o null si no existe.</returns>
         public static async Task<Pedido> ComprobarId(Pedido pedido)
         {
             Pedido pe;

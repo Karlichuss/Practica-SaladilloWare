@@ -38,7 +38,7 @@
                      Padding="25, 25"
                      Style="{StaticResource lytStyle}">
             <Label x:Name="lblTitulo"
-                   Text="Iniciar sesión"
+                   Text="Introduce su cuenta de usuario y contraseña."
                    VerticalOptions="CenterAndExpand"
                    FontSize="Large"
                    Style="{StaticResource lblStyle}"/>
@@ -74,7 +74,7 @@
                 </Label.Triggers>
             </Label>
             <Button x:Name="btnLogIn"
-                    Text="Log In"
+                    Text="Iniciar Sesión"
                     VerticalOptions="Center"
                     HorizontalOptions="FillAndExpand"
                     Style="{StaticResource btnStyle}"/>

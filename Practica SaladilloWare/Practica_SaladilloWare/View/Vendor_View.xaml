@@ -52,7 +52,7 @@
                                HorizontalOptions="Start"
                                Style="{StaticResource lblStyle}"/>
                         <Label Grid.Column="1"
-                               Text="PlacaBase"
+                               Text="Placa Base"
                                HorizontalOptions="Start"
                                Style="{StaticResource lblStyle}"/>
                         <Label Grid.Column="2"
@@ -68,7 +68,7 @@
                                HorizontalOptions="Start"
                                Style="{StaticResource lblStyle}"/>
                         <Label Grid.Column="5"
-                               Text="TarjetaGrafica"
+                               Text="Tarjeta Gráfica"
                                HorizontalOptions="Start"
                                Style="{StaticResource lblStyle}"/>
                         <Label Grid.Column="6"

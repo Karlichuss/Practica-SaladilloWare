@@ -50,7 +50,7 @@
                     <Picker x:Name="picProcesador"
                             WidthRequest="300"/>
                     <Label x:Name="lblChasis"
-                           Text="Chasis: "
+                           Text="Chásis: "
                            Style="{StaticResource lblStyle}"
                            Margin="10,0,0,0"/>
                     <Picker x:Name="picChasis"
@@ -62,7 +62,7 @@
                     <Picker x:Name="picMemoria"
                             WidthRequest="300"/>
                     <Label x:Name="lblTarjetaGrafica"
-                           Text="Tarjeta Grafica: "
+                           Text="Tarjeta Gráfica: "
                            Style="{StaticResource lblStyle}"
                            Margin="10,0,0,0"/>
                     <Picker x:Name="picTarjetaGrafica"
@@ -76,7 +76,7 @@
                             IsEnabled="False"
                             Style="{StaticResource btnStyle}"/>
                     <Label x:Name="lblResumen"
-                           Text="Resumen: "
+                           Text="Resúmen: "
                            Style="{StaticResource lblStyle}"
                            Margin="10,0,0,0"/>
                     <ListView x:Name="lstResumen"
@@ -138,7 +138,7 @@
                 </StackLayout>
             </StackLayout>
             <Button x:Name="btnLogOut"
-                    Text="Cerrar Sesion"
+                    Text="Cerrar Sesión"
                     Style="{StaticResource btnStyle}"/>
         </StackLayout>
     </ContentPage.Content>

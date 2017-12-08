@@ -21,7 +21,7 @@ namespace Practica_SaladilloWare.View
         /// <summary>
         /// Constructor. Le pasa el usuario del parametro a su ViewModel.
         /// </summary>
-        /// <param name="usuario">El usuario que inicia la sesion.</param>
+        /// <param name="usuario">El usuario que inicia la sesión.</param>
         public Cliente_View(Usuario usuario)
         {
             InitializeComponent();
@@ -37,8 +37,8 @@ namespace Practica_SaladilloWare.View
 
             #region Acciones
 
-            // El metodo ComprobarSeleccion() es llamado cada vez que tocamos algun valor de cualquiera de los pickers.
-            // Hasta que no esten todos los pickers con algun valor seleccionado, no podremos usar los botones Aceptar y Confirmar.
+            // El metodo ComprobarSeleccion() es llamado cada vez que tocamos algún valor de cualquiera de los Pickers.
+            // Hasta que no esten todos los pickers con algún valor seleccionado, no podremos usar los botones Aceptar y Confirmar.
             picPlacaBase.SelectedIndexChanged += (sender, args) =>
             {
                 ViewModel.ComprobarSeleccion();
@@ -82,7 +82,7 @@ namespace Practica_SaladilloWare.View
                 ViewModel.LimpiarFormulario();
             };
 
-            // Cuando hacemos click en Cerrar Sesion, volvemos a la vista de LogIn.
+            // Cuando hacemos click en Cerrar Sesión, volvemos a la vista de LogIn.
             btnLogOut.Clicked += async (sender, args) =>
             {
                 await Navigation.PushModalAsync(new LogIn_View());
@@ -97,8 +97,8 @@ namespace Practica_SaladilloWare.View
         #region Metodos
 
         /// <summary>
-        /// Realiza las operaciones de configuracion de la vista para cuando abrimos la vista.
-        /// Mostramos un mensaje de bienvenida y rellenamos los menus deplegables con el catalogo.
+        /// Realiza las operaciones de configuración de la vista para que cuando se abra, esta esté personalizada.
+        /// Mostramos un mensaje de bienvenida y rellenamos los menús deplegables con el catálogo.
         /// </summary>
         /// <returns></returns>
         private async Task InitViews()

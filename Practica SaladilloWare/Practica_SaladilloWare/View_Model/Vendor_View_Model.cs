@@ -12,13 +12,14 @@ namespace Practica_SaladilloWare.View_Model
 
         #region Declaracion de variables
 
-        public Usuario Usuario; // El usuario que ha iniciado sesion.
+        public Usuario Usuario; // El usuario que ha iniciado sesión.
         INavigation Navigation; // Necesario para poder navegar entre las distintas vistas.
-        Page Page; // Necesario para poder realizar dialogos.
+        Page Page; // Necesario para poder realizar diálogos.
 
         // Elementos del layout
         ListView lstResumen;
 
+        // Coleccion de pedidos para la lista.
         List<Pedido> pedidos;
 
         #endregion
@@ -26,11 +27,11 @@ namespace Practica_SaladilloWare.View_Model
         #region Constructores
 
         /// <summary>
-        /// Constructor. Necesita muchos datos de la vista asociada, ya que esta es la parte logica.
+        /// Constructor. Necesita muchos datos de la vista asociada, ya que esta es la parte lógica.
         /// </summary>
         /// <param name="page">El code behind de la vista asociada.</param>
         /// <param name="navigation">Necesario para poder navegar entre vistas.</param>
-        /// <param name="usuario">El usuario que ha iniciado la sesion.</param>
+        /// <param name="usuario">El usuario que ha iniciado la sesión.</param>
         public Vendor_View_Model(Page page, INavigation navigation, Usuario usuario, ListView lstResumen)
         {
             Page = page;
@@ -44,7 +45,7 @@ namespace Practica_SaladilloWare.View_Model
         #region Metodos
 
         /// <summary>
-        /// Actualiza la base de datos con el nuevo catalogo que tenemos en un XML.
+        /// Actualiza la base de datos con el nuevo catálogo que tenemos en un XML.
         /// </summary>
         /// <returns></returns>
         public async Task ActualizarPreciosAsync()
@@ -52,8 +53,8 @@ namespace Practica_SaladilloWare.View_Model
             // Actualizamos la base de datos con los datos del XML.
             await XML_Data_Loader.LoadData();
 
-            // Notificamos al usaurio que la base de datos se ha actualizado.
-            await Page.DisplayAlert("Datos actualizados con exito.", "Los nuevos precios estan ya disponibles.", "OK");
+            // Notificamos al usuario que la base de datos se ha actualizado.
+            await Page.DisplayAlert("Datos actualizados con éxito.", "Los nuevos precios estan ya disponibles.", "OK");
 
             // Refrescamos la lista de los pedidos aplicando los nuevos precios.
             lstResumen.ItemsSource = await CargarPedidos();
@@ -101,9 +102,9 @@ namespace Practica_SaladilloWare.View_Model
         }
 
         /// <summary>
-        /// Calcula de un pedido el precio total.
+        /// Calcula el precio total de un pedido que pasamos por parámetro.
         /// </summary>
-        /// <param name="pedido"></param>
+        /// <param name="pedido">El pedido al que le queremos sacar el total.</param>
         /// <returns>El precio total de todos los componentes del pedido.</returns>
         private async Task<float> CalcularTotalAsync(Pedido pedido)
         {

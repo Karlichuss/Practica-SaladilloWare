@@ -4,17 +4,6 @@ namespace Practica_SaladilloWare.Model
 {
     public class LineaPedido
     {
-        public LineaPedido(int id, string usuario, string placaBase, string procesador, string tarjetaGrafica, string chasis, string rAM, float total)
-        {
-            Id = id;
-            Usuario = usuario;
-            PlacaBase = placaBase;
-            Procesador = procesador;
-            TarjetaGrafica = tarjetaGrafica;
-            Chasis = chasis;
-            RAM = rAM;
-            Total = total;
-        }
 
         public int Id { get; set; }
         public String Usuario { get; set; }
@@ -24,5 +13,21 @@ namespace Practica_SaladilloWare.Model
         public String Chasis { get; set; }
         public String RAM { get; set; }
         public float Total { get; set; }
+
+        #region Constructores
+
+        public LineaPedido(int id, string usuario, string placaBase, string procesador, string tarjetaGrafica, string chasis, string ram, float total)
+        {
+            Id = id;
+            Usuario = usuario;
+            PlacaBase = placaBase;
+            Procesador = procesador;
+            TarjetaGrafica = tarjetaGrafica;
+            Chasis = chasis;
+            RAM = ram;
+            Total = total;
+        }
+
+        #endregion
     }
 }

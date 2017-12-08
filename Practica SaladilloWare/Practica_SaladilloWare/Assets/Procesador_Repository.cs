@@ -27,7 +27,7 @@ namespace Practica_SaladilloWare.Assets
         {
             // Inicializamos el SQLiteconnection.
             conn = new SQLiteAsyncConnection(dbPath);
-            // Creamos la tabla PlacaBase.
+            // Creamos la tabla Procesador.
             // Para que la ejecucion no siga y se espere a que este creada la tabla ponemos el wait
             conn.CreateTableAsync<Procesador>().Wait();
         }
@@ -53,7 +53,7 @@ namespace Practica_SaladilloWare.Assets
         /// Añade un nuevo elemento en la tabla.
         /// </summary>
         /// <param name="Nombre">El nombre del elemento a añadir</param>
-        /// <param name="Precio">El precio del elemento a añador</param>
+        /// <param name="Precio">El precio del elemento a añadir</param>
         /// <returns></returns>
         public async Task Add_Item(String Nombre, String Precio)
         {
@@ -118,9 +118,9 @@ namespace Practica_SaladilloWare.Assets
         }
 
         /// <summary>
-        /// Comprueba si existe el chasis recibido por parametro.
+        /// Comprueba si existe el producto recibido por parámetro.
         /// </summary>
-        /// <param name="producto">Chasis a comprobar.</param>
+        /// <param name="producto">El producto a comprobar.</param>
         /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<Procesador> ComprobarId(Procesador producto)
         {
@@ -133,9 +133,9 @@ namespace Practica_SaladilloWare.Assets
         }
 
         /// <summary>
-        /// Comprueba si existe el chasis recibido por parametro.
+        /// Comprueba si existe el producto recibido por parámetro.
         /// </summary>
-        /// <param name="producto">Chasis a comprobar.</param>
+        /// <param name="producto">El producto a comprobar.</param>
         /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<Procesador> ComprobarId(int producto)
         {
@@ -148,9 +148,9 @@ namespace Practica_SaladilloWare.Assets
         }
 
         /// <summary>
-        /// Comprueba si existe el nombre recibido por parametro.
+        /// Comprueba si existe el nombre recibido por parámetro.
         /// </summary>
-        /// <param name="producto">Nombre del chasis a comprobar.</param>
+        /// <param name="nombre">Nombre del producto a comprobar.</param>
         /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<Procesador> ComprobarNombre(String nombre)
         {

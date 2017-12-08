@@ -12,9 +12,9 @@ namespace Practica_SaladilloWare.View_Model
 
         #region Declaracion de variables
 
-        public Usuario Usuario; // El usuario que ha iniciado sesion.
+        public Usuario Usuario; // El usuario que ha iniciado sesión.
         INavigation Navigation; // Necesario para poder navegar entre las distintas vistas.
-        Page Page; // Necesario para poder realizar dialogos.
+        Page Page; // Necesario para poder realizar diálogos.
 
         // Elementos del layout
         Picker picPlacaBase, picProcesador, picChasis, picMemoria, picTarjetaGrafica; 
@@ -27,7 +27,7 @@ namespace Practica_SaladilloWare.View_Model
         #region Constructores
 
         /// <summary>
-        /// Constructor. Necesita muchos datos de la vista asociada, ya que esta es la parte logica.
+        /// Constructor. Necesita muchos datos de la vista asociada, ya que esta es la parte lógica.
         /// </summary>
         /// <param name="page">El code behind de la vista asociada.</param>
         /// <param name="navigation">Necesario para poder navegar entre vistas.</param>
@@ -62,7 +62,7 @@ namespace Practica_SaladilloWare.View_Model
         #region Metodos
 
         /// <summary>
-        /// Comprueba que algun Picker aun no tiene algo seleccionado, y si es asi, deja dehabilitados los botones Aceptar y Confirmar.
+        /// Comprueba que algun Picker aún no tiene algo seleccionado, y si es así, deja deshabilitados los botones Aceptar y Confirmar.
         /// </summary>
         public void ComprobarSeleccion()
         {
@@ -88,7 +88,7 @@ namespace Practica_SaladilloWare.View_Model
         /// <param name="chasisSeleccionado"></param>
         /// <param name="ramSeleccionada"></param>
         /// <param name="tarjetagraficaSeleccionada"></param>
-        /// <returns>La coleccion de los componentes seleccionados.</returns>
+        /// <returns>La colección de los componentes seleccionados.</returns>
         public static async Task<List<Object>> RellenarLista(String placabaseSeleccionado, String procesadorSeleccionado, String chasisSeleccionado, String ramSeleccionada, String tarjetagraficaSeleccionada)
         {
             // A partir de los nombres de los componentes seleccionados, los buscamos en la base de datos, y sacamos todos los datos de cada componente.
@@ -98,7 +98,7 @@ namespace Practica_SaladilloWare.View_Model
             RAM ram = await RAM_Repository.ComprobarNombre(ramSeleccionada);
             TarjetaGrafica tarjetaGrafica = await TarjetaGrafica_Repository.ComprobarNombre(tarjetagraficaSeleccionada);
 
-            // Metemos en una coleccion los componentes. Ya con DataBinding la propia lista Resumen sabe que propiedades debe mostrar.
+            // Metemos en una colección los componentes. Ya con DataBinding la propia lista Resumen sabrá qué propiedades debe mostrar.
             List<Object> LineasResumen = new List<Object>
             {
                 placabase,
@@ -130,7 +130,7 @@ namespace Practica_SaladilloWare.View_Model
         /// <param name="chasisSeleccionado"></param>
         /// <param name="ramSeleccionada"></param>
         /// <param name="tarjetagraficaSeleccionada"></param>
-        /// <returns></returns>
+        /// <returns>La suma de todos los componentes seleccionados.</returns>
         public static async Task<String> ObtenerTotal(String placabaseSeleccionado, String procesadorSeleccionado, String chasisSeleccionado, String ramSeleccionada, String tarjetagraficaSeleccionada)
         {
             // A partir de los nombres de los componentes seleccionados, los buscamos en la base de datos, y sacamos todos los datos de cada componente.
@@ -181,7 +181,7 @@ namespace Practica_SaladilloWare.View_Model
         }
 
         /// <summary>
-        /// Resetea la vista. Borra la seleccion y los datos de la lista Resumen.
+        /// Resetea la vista. Borra la selección de cada Picker y los datos de la lista Resumen.
         /// </summary>
         public void LimpiarFormulario()
         {
@@ -202,7 +202,7 @@ namespace Practica_SaladilloWare.View_Model
         /// <returns></returns>
         public async Task RealizarPedido()
         {
-            // Introducimos en la base de datos un nuevo pedido con los IDs de los productos seleccionados y el ID del usuario. Luego limpiamos el formulario.
+            // Introducimos en la base de datos un nuevo pedido con los IDs de los productos seleccionados y el ID del usuario.
             await GenerarPedido(picPlacaBase.Items[picPlacaBase.SelectedIndex], picProcesador.Items[picProcesador.SelectedIndex], picChasis.Items[picChasis.SelectedIndex], picMemoria.Items[picMemoria.SelectedIndex], picTarjetaGrafica.Items[picTarjetaGrafica.SelectedIndex]);
 
             // Notificamos al usuario de que el pedido ha sido realizado.
