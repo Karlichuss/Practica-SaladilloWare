@@ -112,7 +112,7 @@ namespace Practica_SaladilloWare.Assets
         /// <summary>
         /// Comprueba si existe el id recibido por parametro.
         /// </summary>
-        /// <param name="producto">Id del pedido a comprobar.</param>
+        /// <param name="pedido">Id del pedido a comprobar.</param>
         /// <returns>El mismo pedido, o null si no existe.</returns>
         public static async Task<Pedido> ComprobarId(Pedido pedido)
         {

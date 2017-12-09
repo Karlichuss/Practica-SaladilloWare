@@ -32,6 +32,7 @@ namespace Practica_SaladilloWare.View_Model
         /// <param name="page">El code behind de la vista asociada.</param>
         /// <param name="navigation">Necesario para poder navegar entre vistas.</param>
         /// <param name="usuario">El usuario que ha iniciado la sesión.</param>
+        /// <param name="lstResumen"></param>
         public Vendor_View_Model(Page page, INavigation navigation, Usuario usuario, ListView lstResumen)
         {
             Page = page;

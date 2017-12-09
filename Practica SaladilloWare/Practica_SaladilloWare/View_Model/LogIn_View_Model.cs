@@ -1,9 +1,9 @@
 ﻿using Practica_SaladilloWare.Assets;
-using System;
-using System.Threading.Tasks;
 using Practica_SaladilloWare.Model;
 using Practica_SaladilloWare.View;
+using System.Threading.Tasks;
 using Xamarin.Forms;
+using System;
 
 namespace Practica_SaladilloWare.View_Model
 {
@@ -42,6 +42,19 @@ namespace Practica_SaladilloWare.View_Model
         #region Métodos
 
         /// <summary>
+        /// Impide que al campo de texto pasado por parámetro se le pueda meter mas de maxCaracteres.
+        /// </summary>
+        /// <param name="maxCaracteres">Numero maximo de caracteres permitidos.</param>
+        /// <param name="txt">El campo de texto a controlar.</param>
+        public void ImpedirMaxCaracteres(int maxCaracteres, Entry txt)
+        {
+            if (txt.Text.Length > maxCaracteres)
+            {
+                txt.Text = txt.Text.Substring(0, maxCaracteres);
+            }
+        }
+
+        /// <summary>
         /// Realiza las comprobaciones de que el formulario esta rellenado correctamente, y comprueba que el usuario y la contraseña son correctos.
         /// </summary>
         /// <returns></returns>
@@ -50,7 +63,7 @@ namespace Practica_SaladilloWare.View_Model
             // Primero comprobamos que el usuario no ha dejado algún campo vacío.
             if (string.IsNullOrEmpty(txtNombre.Text.ToString()) || string.IsNullOrEmpty(txtContrasenia.Text.ToString()))
             {
-                await Page.DisplayAlert("ERROR", "Por favor, no deje campos vacíos.", "OK");
+                await Page.DisplayAlert("ERROR", "No deben haber campos vacíos.", "OK");
             } else if (txtContrasenia.Text.Length < 10)
             {
                 await Page.DisplayAlert("ERROR", "La contraseña es demasiado corta. Mínimo 10 caracteres.", "OK");

@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['pedido_2ecs',['Pedido.cs',['../_pedido_8cs.html',1,'']]],
+  ['pedido_5frepository_2ecs',['Pedido_Repository.cs',['../_pedido___repository_8cs.html',1,'']]],
+  ['pinvoke_2eg_2ecs',['PInvoke.g.cs',['../obj_2x86_2_release_2ilc_2intermediate_2_practica___saladillo_ware_8_u_w_p_8_mcg_interop_2_p_invoke_8g_8cs.html',1,'']]],
+  ['pinvoke_2eg_2ecs',['PInvoke.g.cs',['../bin_2x86_2_release_2ilc_2_p_invoke_8g_8cs.html',1,'']]],
+  ['placabase_2ecs',['PlacaBase.cs',['../_placa_base_8cs.html',1,'']]],
+  ['placabase_5frepository_2ecs',['PlacaBase_Repository.cs',['../_placa_base___repository_8cs.html',1,'']]],
+  ['practica_5fsaladilloware_2eapp_2examl_2eg_2ecs',['Practica_SaladilloWare.App.xaml.g.cs',['../_debug_2_practica___saladillo_ware_8_app_8xaml_8g_8cs.html',1,'']]],
+  ['practica_5fsaladilloware_2eapp_2examl_2eg_2ecs',['Practica_SaladilloWare.App.xaml.g.cs',['../_release_2_practica___saladillo_ware_8_app_8xaml_8g_8cs.html',1,'']]],
+  ['practica_5fsaladilloware_2euwp_2eitfproxy_2eg_2ecs',['Practica_SaladilloWare.UWP.ITFProxy.g.cs',['../obj_2x86_2_release_2ilc_2intermediate_2_practica___saladillo_ware_8_u_w_p_8_i_t_f_proxy_8g_8cs.html',1,'']]],
+  ['practica_5fsaladilloware_2euwp_2eitfproxy_2eg_2ecs',['Practica_SaladilloWare.UWP.ITFProxy.g.cs',['../bin_2x86_2_release_2ilc_2_practica___saladillo_ware_8_u_w_p_8_i_t_f_proxy_8g_8cs.html',1,'']]],
+  ['practica_5fsaladilloware_2eview_2ecliente_5fview_2examl_2eg_2ecs',['Practica_SaladilloWare.View.Cliente_View.xaml.g.cs',['../_practica___saladillo_ware_8_view_8_cliente___view_8xaml_8g_8cs.html',1,'']]],
+  ['practica_5fsaladilloware_2eview_2ecliente_5fview_5f_2examl_2eg_2ecs',['Practica_SaladilloWare.View.Cliente_View_.xaml.g.cs',['../_practica___saladillo_ware_8_view_8_cliente___view___8xaml_8g_8cs.html',1,'']]],
+  ['practica_5fsaladilloware_2eview_2elogin_5fview_2examl_2eg_2ecs',['Practica_SaladilloWare.View.LogIn_View.xaml.g.cs',['../_release_2_practica___saladillo_ware_8_view_8_log_in___view_8xaml_8g_8cs.html',1,'']]],
+  ['practica_5fsaladilloware_2eview_2elogin_5fview_2examl_2eg_2ecs',['Practica_SaladilloWare.View.LogIn_View.xaml.g.cs',['../_debug_2_practica___saladillo_ware_8_view_8_log_in___view_8xaml_8g_8cs.html',1,'']]],
+  ['practica_5fsaladilloware_2eview_2elogin_5fview_5f_2examl_2eg_2ecs',['Practica_SaladilloWare.View.LogIn_View_.xaml.g.cs',['../_practica___saladillo_ware_8_view_8_log_in___view___8xaml_8g_8cs.html',1,'']]],
+  ['practica_5fsaladilloware_2eview_2elogin_5fviewx_2examl_2eg_2ecs',['Practica_SaladilloWare.View.LogIn_ViewX.xaml.g.cs',['../_practica___saladillo_ware_8_view_8_log_in___view_x_8xaml_8g_8cs.html',1,'']]],
+  ['practica_5fsaladilloware_2eview_2epage1_2examl_2eg_2ecs',['Practica_SaladilloWare.View.Page1.xaml.g.cs',['../_practica___saladillo_ware_8_view_8_page1_8xaml_8g_8cs.html',1,'']]],
+  ['practica_5fsaladilloware_2eview_2evendor_5fview_2examl_2eg_2ecs',['Practica_SaladilloWare.View.Vendor_View.xaml.g.cs',['../_practica___saladillo_ware_8_view_8_vendor___view_8xaml_8g_8cs.html',1,'']]],
+  ['practica_5fsaladilloware_2eview_2evendor_5fview_5f_2examl_2eg_2ecs',['Practica_SaladilloWare.View.Vendor_View_.xaml.g.cs',['../_practica___saladillo_ware_8_view_8_vendor___view___8xaml_8g_8cs.html',1,'']]],
+  ['preinitstructs_2ecs',['PreInitStructs.cs',['../_pre_init_structs_8cs.html',1,'']]],
+  ['procesador_2ecs',['Procesador.cs',['../_procesador_8cs.html',1,'']]],
+  ['procesador_5frepository_2ecs',['Procesador_Repository.cs',['../_procesador___repository_8cs.html',1,'']]]
+];

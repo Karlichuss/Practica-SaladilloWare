@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['mainactivity',['MainActivity',['../class_practica___saladillo_ware_1_1_droid_1_1_main_activity.html',1,'Practica_SaladilloWare::Droid']]],
+  ['mainpage',['MainPage',['../class_practica___saladillo_ware_1_1_u_w_p_1_1_main_page.html',1,'Practica_SaladilloWare::UWP']]],
+  ['manipulationcompletedroutedeventargs',['ManipulationCompletedRoutedEventArgs',['../class_windows_1_1_u_i_1_1_xaml_1_1_input_1_1_manipulation_completed_routed_event_args.html',1,'Windows::UI::Xaml::Input']]],
+  ['manipulationdelta',['ManipulationDelta',['../struct_windows_1_1_u_i_1_1_input_1_1_manipulation_delta.html',1,'Windows::UI::Input']]],
+  ['manipulationdeltaroutedeventargs',['ManipulationDeltaRoutedEventArgs',['../class_windows_1_1_u_i_1_1_xaml_1_1_input_1_1_manipulation_delta_routed_event_args.html',1,'Windows::UI::Xaml::Input']]],
+  ['manipulationinertiastartingroutedeventargs',['ManipulationInertiaStartingRoutedEventArgs',['../class_windows_1_1_u_i_1_1_xaml_1_1_input_1_1_manipulation_inertia_starting_routed_event_args.html',1,'Windows::UI::Xaml::Input']]],
+  ['manipulationstartedroutedeventargs',['ManipulationStartedRoutedEventArgs',['../class_windows_1_1_u_i_1_1_xaml_1_1_input_1_1_manipulation_started_routed_event_args.html',1,'Windows::UI::Xaml::Input']]],
+  ['manipulationstartingroutedeventargs',['ManipulationStartingRoutedEventArgs',['../class_windows_1_1_u_i_1_1_xaml_1_1_input_1_1_manipulation_starting_routed_event_args.html',1,'Windows::UI::Xaml::Input']]],
+  ['mapcontrolautomationpeer',['MapControlAutomationPeer',['../class_windows_1_1_u_i_1_1_xaml_1_1_automation_1_1_peers_1_1_map_control_automation_peer.html',1,'Windows::UI::Xaml::Automation::Peers']]],
+  ['marshalingbehaviorattribute',['MarshalingBehaviorAttribute',['../class_windows_1_1_foundation_1_1_metadata_1_1_marshaling_behavior_attribute.html',1,'Windows::Foundation::Metadata']]],
+  ['mediaelementautomationpeer',['MediaElementAutomationPeer',['../class_windows_1_1_u_i_1_1_xaml_1_1_automation_1_1_peers_1_1_media_element_automation_peer.html',1,'Windows::UI::Xaml::Automation::Peers']]],
+  ['mediaplayerelementautomationpeer',['MediaPlayerElementAutomationPeer',['../class_windows_1_1_u_i_1_1_xaml_1_1_automation_1_1_peers_1_1_media_player_element_automation_peer.html',1,'Windows::UI::Xaml::Automation::Peers']]],
+  ['mediatransportcontrolsautomationpeer',['MediaTransportControlsAutomationPeer',['../class_windows_1_1_u_i_1_1_xaml_1_1_automation_1_1_peers_1_1_media_transport_controls_automation_peer.html',1,'Windows::UI::Xaml::Automation::Peers']]],
+  ['memberentry',['MemberEntry',['../struct_member_entry.html',1,'']]],
+  ['menuflyout',['MenuFlyout',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_menu_flyout.html',1,'Windows::UI::Xaml::Controls']]],
+  ['menuflyoutitem',['MenuFlyoutItem',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_menu_flyout_item.html',1,'Windows::UI::Xaml::Controls']]],
+  ['menuflyoutitemautomationpeer',['MenuFlyoutItemAutomationPeer',['../class_windows_1_1_u_i_1_1_xaml_1_1_automation_1_1_peers_1_1_menu_flyout_item_automation_peer.html',1,'Windows::UI::Xaml::Automation::Peers']]],
+  ['menuflyoutitembase',['MenuFlyoutItemBase',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_menu_flyout_item_base.html',1,'Windows::UI::Xaml::Controls']]],
+  ['menuflyoutpresenterautomationpeer',['MenuFlyoutPresenterAutomationPeer',['../class_windows_1_1_u_i_1_1_xaml_1_1_automation_1_1_peers_1_1_menu_flyout_presenter_automation_peer.html',1,'Windows::UI::Xaml::Automation::Peers']]],
+  ['messagedialog',['MessageDialog',['../class_windows_1_1_u_i_1_1_popups_1_1_message_dialog.html',1,'Windows::UI::Popups']]],
+  ['multicastdelegate_5f_5fsystem_5fprivate_5fcorelib',['MulticastDelegate__System_Private_CoreLib',['../class_system_1_1_multicast_delegate_____system___private___core_lib.html',1,'System']]],
+  ['museattribute',['MuseAttribute',['../class_windows_1_1_foundation_1_1_metadata_1_1_muse_attribute.html',1,'Windows::Foundation::Metadata']]]
+];

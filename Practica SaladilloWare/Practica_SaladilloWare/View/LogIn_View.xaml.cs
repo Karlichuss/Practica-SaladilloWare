@@ -3,6 +3,7 @@ using Practica_SaladilloWare.View_Model;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System;
 
 namespace Practica_SaladilloWare.View
 {
@@ -31,6 +32,8 @@ namespace Practica_SaladilloWare.View
             // Define el BindingContext al ViewModel.
             BindingContext = ViewModel;
 
+            InitViews();
+
             #region Acciones
 
             // Cuando hacemos click en Iniciar Sesión, realiza las comprobaciones de que el usuario y la contraseña son correctas y realiza la navegación a la vista que corresponda.
@@ -39,8 +42,34 @@ namespace Practica_SaladilloWare.View
                 await ViewModel.IniciarSesion();
             };
 
+            // Cuando escribimos algo en el campo de texto, tenemos que controlar que no se metan mas de 4 caracteres.
+            txtNombre.TextChanged += (sender, args) =>
+            {
+                ViewModel.ImpedirMaxCaracteres(4, txtNombre);
+            };
+
+            // Cuando escribimos algo en el campo de texto, tenemos que controlar que no se metan mas de 10 caracteres.
+            txtContrasenia.TextChanged += (sender, args) =>
+            {
+                ViewModel.ImpedirMaxCaracteres(10, txtContrasenia);
+            };
+
             #endregion
 
+        }
+
+        #endregion
+
+        #region Metodos
+
+        /// <summary>
+        /// Realiza las operaciones de configuración de la vista para que cuando se abra, esta esté personalizada.
+        /// </summary>
+        private void InitViews()
+        {
+            // Impedimos que salte el null exception dandole valor inicial a cadena vacía a los campos.
+            txtNombre.Text = "";
+            txtContrasenia.Text = "";
         }
 
         #endregion

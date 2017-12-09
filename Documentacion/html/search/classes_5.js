@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['fadeinthemeanimation',['FadeInThemeAnimation',['../class_windows_1_1_u_i_1_1_xaml_1_1_media_1_1_animation_1_1_fade_in_theme_animation.html',1,'Windows::UI::Xaml::Media::Animation']]],
+  ['fadeoutthemeanimation',['FadeOutThemeAnimation',['../class_windows_1_1_u_i_1_1_xaml_1_1_media_1_1_animation_1_1_fade_out_theme_animation.html',1,'Windows::UI::Xaml::Media::Animation']]],
+  ['file_5faccess_5fhelper',['File_Access_Helper',['../class_practica___saladillo_ware_1_1_u_w_p_1_1_file___access___helper.html',1,'Practica_SaladilloWare::UWP']]],
+  ['fileactivatedeventargs',['FileActivatedEventArgs',['../class_windows_1_1_application_model_1_1_activation_1_1_file_activated_event_args.html',1,'Windows::ApplicationModel::Activation']]],
+  ['fileopenpickeractivatedeventargs',['FileOpenPickerActivatedEventArgs',['../class_windows_1_1_application_model_1_1_activation_1_1_file_open_picker_activated_event_args.html',1,'Windows::ApplicationModel::Activation']]],
+  ['filesavepickeractivatedeventargs',['FileSavePickerActivatedEventArgs',['../class_windows_1_1_application_model_1_1_activation_1_1_file_save_picker_activated_event_args.html',1,'Windows::ApplicationModel::Activation']]],
+  ['flipview',['FlipView',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_flip_view.html',1,'Windows::UI::Xaml::Controls']]],
+  ['flipviewautomationpeer',['FlipViewAutomationPeer',['../class_windows_1_1_u_i_1_1_xaml_1_1_automation_1_1_peers_1_1_flip_view_automation_peer.html',1,'Windows::UI::Xaml::Automation::Peers']]],
+  ['flipviewitem',['FlipViewItem',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_flip_view_item.html',1,'Windows::UI::Xaml::Controls']]],
+  ['flipviewitemautomationpeer',['FlipViewItemAutomationPeer',['../class_windows_1_1_u_i_1_1_xaml_1_1_automation_1_1_peers_1_1_flip_view_item_automation_peer.html',1,'Windows::UI::Xaml::Automation::Peers']]],
+  ['flipviewitemdataautomationpeer',['FlipViewItemDataAutomationPeer',['../class_windows_1_1_u_i_1_1_xaml_1_1_automation_1_1_peers_1_1_flip_view_item_data_automation_peer.html',1,'Windows::UI::Xaml::Automation::Peers']]],
+  ['flyoutbase',['FlyoutBase',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_primitives_1_1_flyout_base.html',1,'Windows::UI::Xaml::Controls::Primitives']]],
+  ['flyoutbaseclosingeventargs',['FlyoutBaseClosingEventArgs',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_primitives_1_1_flyout_base_closing_event_args.html',1,'Windows::UI::Xaml::Controls::Primitives']]],
+  ['flyoutpresenterautomationpeer',['FlyoutPresenterAutomationPeer',['../class_windows_1_1_u_i_1_1_xaml_1_1_automation_1_1_peers_1_1_flyout_presenter_automation_peer.html',1,'Windows::UI::Xaml::Automation::Peers']]],
+  ['focusdisengagedeventargs',['FocusDisengagedEventArgs',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_focus_disengaged_event_args.html',1,'Windows::UI::Xaml::Controls']]],
+  ['focusengagedeventargs',['FocusEngagedEventArgs',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_focus_engaged_event_args.html',1,'Windows::UI::Xaml::Controls']]],
+  ['fontfamily',['FontFamily',['../class_windows_1_1_u_i_1_1_xaml_1_1_media_1_1_font_family.html',1,'Windows::UI::Xaml::Media']]],
+  ['fonticon',['FontIcon',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_font_icon.html',1,'Windows::UI::Xaml::Controls']]],
+  ['fontweight',['FontWeight',['../struct_windows_1_1_u_i_1_1_text_1_1_font_weight.html',1,'Windows::UI::Text']]],
+  ['fontweights',['FontWeights',['../class_windows_1_1_u_i_1_1_text_1_1_font_weights.html',1,'Windows::UI::Text']]],
+  ['foundationcontract',['FoundationContract',['../struct_windows_1_1_foundation_1_1_foundation_contract.html',1,'Windows::Foundation']]],
+  ['frame',['Frame',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_frame.html',1,'Windows::UI::Xaml::Controls']]],
+  ['frameworkelement',['FrameworkElement',['../class_windows_1_1_u_i_1_1_xaml_1_1_framework_element.html',1,'Windows::UI::Xaml']]],
+  ['frameworkelementautomationpeer',['FrameworkElementAutomationPeer',['../class_windows_1_1_u_i_1_1_xaml_1_1_automation_1_1_peers_1_1_framework_element_automation_peer.html',1,'Windows::UI::Xaml::Automation::Peers']]],
+  ['frameworktemplate',['FrameworkTemplate',['../class_windows_1_1_u_i_1_1_xaml_1_1_framework_template.html',1,'Windows::UI::Xaml']]]
+];

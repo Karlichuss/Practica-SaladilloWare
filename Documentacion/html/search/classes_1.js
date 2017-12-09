@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['backgroundactivatedeventargs',['BackgroundActivatedEventArgs',['../class_windows_1_1_application_model_1_1_activation_1_1_background_activated_event_args.html',1,'Windows::ApplicationModel::Activation']]],
+  ['backrequestedeventargs',['BackRequestedEventArgs',['../class_windows_1_1_u_i_1_1_core_1_1_back_requested_event_args.html',1,'Windows::UI::Core']]],
+  ['basicproperties',['BasicProperties',['../class_windows_1_1_storage_1_1_file_properties_1_1_basic_properties.html',1,'Windows::Storage::FileProperties']]],
+  ['binding',['Binding',['../class_windows_1_1_u_i_1_1_xaml_1_1_data_1_1_binding.html',1,'Windows::UI::Xaml::Data']]],
+  ['bindingbase',['BindingBase',['../class_windows_1_1_u_i_1_1_xaml_1_1_data_1_1_binding_base.html',1,'Windows::UI::Xaml::Data']]],
+  ['bindingexpression',['BindingExpression',['../class_windows_1_1_u_i_1_1_xaml_1_1_data_1_1_binding_expression.html',1,'Windows::UI::Xaml::Data']]],
+  ['bindingexpressionbase',['BindingExpressionBase',['../class_windows_1_1_u_i_1_1_xaml_1_1_data_1_1_binding_expression_base.html',1,'Windows::UI::Xaml::Data']]],
+  ['bindingoperations',['BindingOperations',['../class_windows_1_1_u_i_1_1_xaml_1_1_data_1_1_binding_operations.html',1,'Windows::UI::Xaml::Data']]],
+  ['bindptr_5f_5fsystem_5fprivate_5finterop',['BINDPTR__System_Private_Interop',['../struct_system_1_1_runtime_1_1_interop_services_1_1_com_types_1_1_b_i_n_d_p_t_r_____system___private___interop.html',1,'System::Runtime::InteropServices::ComTypes']]],
+  ['bitmapicon',['BitmapIcon',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_bitmap_icon.html',1,'Windows::UI::Xaml::Controls']]],
+  ['bitmapimage',['BitmapImage',['../class_windows_1_1_u_i_1_1_xaml_1_1_media_1_1_imaging_1_1_bitmap_image.html',1,'Windows::UI::Xaml::Media::Imaging']]],
+  ['bitmapsource',['BitmapSource',['../class_windows_1_1_u_i_1_1_xaml_1_1_media_1_1_imaging_1_1_bitmap_source.html',1,'Windows::UI::Xaml::Media::Imaging']]],
+  ['boolean',['Boolean',['../class_practica___saladillo_ware_1_1_droid_1_1_resource_1_1_boolean.html',1,'Practica_SaladilloWare::Droid::Resource']]],
+  ['border',['Border',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_border.html',1,'Windows::UI::Xaml::Controls']]],
+  ['brush',['Brush',['../class_windows_1_1_u_i_1_1_xaml_1_1_media_1_1_brush.html',1,'Windows::UI::Xaml::Media']]],
+  ['button',['Button',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_button.html',1,'Windows::UI::Xaml::Controls']]],
+  ['buttonautomationpeer',['ButtonAutomationPeer',['../class_windows_1_1_u_i_1_1_xaml_1_1_automation_1_1_peers_1_1_button_automation_peer.html',1,'Windows::UI::Xaml::Automation::Peers']]],
+  ['buttonbase',['ButtonBase',['../class_windows_1_1_u_i_1_1_xaml_1_1_controls_1_1_primitives_1_1_button_base.html',1,'Windows::UI::Xaml::Controls::Primitives']]],
+  ['buttonbaseautomationpeer',['ButtonBaseAutomationPeer',['../class_windows_1_1_u_i_1_1_xaml_1_1_automation_1_1_peers_1_1_button_base_automation_peer.html',1,'Windows::UI::Xaml::Automation::Peers']]]
+];

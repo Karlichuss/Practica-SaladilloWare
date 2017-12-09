@@ -150,7 +150,7 @@ namespace Practica_SaladilloWare.Assets
         /// <summary>
         /// Comprueba si existe el nombre recibido por parámetro.
         /// </summary>
-        /// <param name="producto">Nombre del producto a comprobar.</param>
+        /// <param name="nombre">Nombre del producto a comprobar.</param>
         /// <returns>El mismo producto, o null si no existe.</returns>
         public static async Task<RAM> ComprobarNombre(String nombre)
         {
